@@ -4,7 +4,7 @@ function Experiences() {
     return (
         <div className="next-screen">
             <div className="screen-padding">
-                <h2 className="title font-bold text-2xl">Capacités & <br /> Expériences.</h2>
+                <h2 className="title font-bold text-3xl">Capacités & <br /> Expériences.</h2>
                 <div style={{ marginTop: '50px' }}>
                     <div className="grid grid-cols-2 gap-4">
                         <div>

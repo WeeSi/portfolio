@@ -12,6 +12,7 @@
         --lines-color:#eeeeee8c;
       --button-color:#ff6446;
       --text-color:rgb(98 98 98);
+      --bg-backdrop: rgba(255,255,255,.97);
 
     }
     .bg-dark {
@@ -22,6 +23,7 @@
       --color:white;
       --button-color:#ff6446;
       --text-color:rgb(207 207 207);
+      --bg-backdrop: #52148c;
       color: white;
     }
   }
@@ -51,7 +53,7 @@
 
 
 h1{
-    font-size: 47px;
+    font-size: 50px;
     position: relative;
 }
 
@@ -678,4 +680,21 @@ article:hover{
 .js-scroll:hover::after{
   transform: scale(1.3);
   background:#ff6446;
+}
+
+.modal-backdrop{
+  background-color: var(--bg-backdrop);
+}
+
+.input-error:hover {
+  cursor: text;
+  box-shadow: 0 0 0 0.2rem #e4305247 !important;
+  background-color: #e4305229 !important;
+}
+
+.input-error:focus {
+  cursor: text;
+  box-shadow: 0 0 0 0.2rem #e4305247 !important;
+  border: 1px solid #e43052 !important;
+  background-color: #e4305229 !important;
 }

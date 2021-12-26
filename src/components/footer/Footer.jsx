@@ -26,16 +26,16 @@ const Footer = (props) => {
           }}
           className="shadow-md btn btn-default btn-foot wow fadeInUp flex justify-between items-center"
         >
-          <span>Parlons</span> <i class="fa fa-chevron-right"></i>
+          <span>Parlons</span> <i className="fa fa-chevron-right"></i>
         </button>
       </div>
       <div style={{ paddingTop: "100px" }} className="screen-padding z-10">
-        <div class="footer content-container relative z-10">
-          <div class="grid grid-cols-3">
-            <div class="col-sm-6 col-xs-6 foot-contact">
-              <a class="navbar-brand" href="https://sebostudio.com"></a>
-              <div class="contact-items">
-                <div class="contact-item">
+        <div className="footer content-container relative z-10">
+          <div className="grid grid-cols-3">
+            <div className="col-sm-6 col-xs-6 foot-contact">
+              <a className="navbar-brand" href="https://sebostudio.com"></a>
+              <div className="contact-items">
+                <div className="contact-item">
                   <label>E.</label>
                   <a href="mailto:franckehuipro@gmail.com">
                     franckehuipro@gmail.com
@@ -43,9 +43,9 @@ const Footer = (props) => {
                 </div>
               </div>
             </div>
-            <div class="col-sm-2 col-xs-6 foot-about">
+            <div className="col-sm-2 col-xs-6 foot-about">
               <h5 className="text text-sm uppercase font-bold">A propos</h5>
-              <ul class="menu">
+              <ul className="menu">
                 <li>
                   <a className="menu-item">
                     A Propos
@@ -69,9 +69,9 @@ const Footer = (props) => {
                 </li>
               </ul>
             </div>
-            <div class="col-sm-2 col-xs-6 foot-social">
+            <div className="col-sm-2 col-xs-6 foot-social">
               <h5 className="text text-sm uppercase font-bold">Me Suivre</h5>
-              <ul class="menu">
+              <ul className="menu">
                 <li>
                   <a
                     rel="noreferrer"
@@ -112,7 +112,7 @@ const Footer = (props) => {
         </div>
       </div>
       <div className="screen-padding">
-        <div class="copyright">2021 © Franck Ehui. All rights reserved.</div>
+        <div className="copyright">2021 © Franck Ehui. All rights reserved.</div>
       </div>
     </section>
   );

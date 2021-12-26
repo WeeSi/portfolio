@@ -28,7 +28,7 @@ function TextArea(props) {
         style={{ fontWeight: "normal", color: " var(--text-color)" }}
         htmlFor={props.name}
       >
-        {props.label}
+        {props.label} {props.required && "*"}
       </label>
       <div style={{ minHeight: parentHeight }} className="custom-scroll-bar">
         <textarea
@@ -43,14 +43,22 @@ function TextArea(props) {
             height: textAreaHeight,
             minHeight: "100px",
           }}
-          className={`input custom-scroll-bar`}
+          className={`input custom-scroll-bar ${props.error && "input-error"}`}
           type="text"
           value={props.dataname}
           placeholder={props.placeholder}
-          // onChange={(event) => onChangeHandler(event)}
+          {...props.register(props.name, {
+            required: props.required,
+            pattern: props.pattern,
+          })}
         >
           {props.dataname}
         </textarea>
+        {props.error && (
+          <span style={{ color: "#ff4d6f" }} className="error text-sm">
+            {props.error.message}
+          </span>
+        )}
       </div>
     </>
   );

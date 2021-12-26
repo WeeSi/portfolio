@@ -14,7 +14,7 @@
  * ----------	---	---------------------------------------------------------  *
  */
 
-import React, { useRef } from "react";
+import React from "react";
 
 function Input({
   name,
@@ -26,14 +26,19 @@ function Input({
   height,
   content,
   label,
+  register,
+  required,
+  pattern,
+  error,
+  ...props
 }) {
-  const input = useRef();
 
   return (
     <div className="w-full">
-      <label style={{ fontWeight: "normal", color:"var(--text-color)" }}>{label}</label>
+      <label style={{ fontWeight: "normal", color: "var(--text-color)" }}>
+        {label} {required && "*"}
+      </label>
       <input
-        ref={input}
         autoComplete={name}
         id={name}
         name={name}
@@ -43,14 +48,21 @@ function Input({
           height: height,
           fontWeight: "normal",
         }}
-        className={`input ${className}`}
+        className={`input ${className} ${error && "input-error"}`}
         type="text"
         value={dataname}
         placeholder={placeholder}
-        onChange={(event) => handleInput(event)}
         disabled={disabled}
+        {...register(name, {
+          required: required,
+          pattern: pattern,
+        })}
       />
-      {content}
+      {error && (
+        <span style={{ color: "#ff4d6f" }} className="error text-sm">
+          {error.message}
+        </span>
+      )}
     </div>
   );
 }

@@ -16,7 +16,7 @@ function Skills() {
     return (
         <div className="bg-alt skills next-screen">
             <div className="screen-padding">
-                <h1 className="title font-bold text-2xl text-white">Compétence.</h1>
+                <h1 className="title font-bold text-3xl text-white">Compétence.</h1>
             </div>
             <Slider {...settings} style={{ position: 'relative', zIndex: '1', marginTop: '50px' }}>
                 <div>

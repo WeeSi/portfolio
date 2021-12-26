@@ -14,7 +14,7 @@
  * ----------	---	---------------------------------------------------------    *
  */
 
-import React, { useEffect, useRef, Suspense, useMemo } from "react";
+import React, { useEffect, useRef, Suspense, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChatIcon, XIcon } from "@heroicons/react/outline";
 import { IconButton } from "@material-ui/core";
@@ -22,9 +22,20 @@ import { connect } from "react-redux";
 import { hideModal } from "../../store-redux/modalActions";
 import Input from "../input/Input";
 import TextArea from "../textarea/Textarea";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Modal = ({ hide, content, title, ...props }) => {
   const node = useRef();
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   useEffect(() => {
     // add when mounted
@@ -75,6 +86,21 @@ const Modal = ({ hide, content, title, ...props }) => {
     }
   };
 
+  const onSubmit = async (inputsData) => {
+    setLoading(true);
+    const { data } = await axios.post("https://franckehui.fr/modal/send.php", {
+      ...inputsData,
+    });
+    setLoading(false);
+    if (data == 1) {
+      setSent(true);
+
+      setTimeout(() => {
+        props.hideModal();
+      }, 2500);
+    }
+  };
+
   return (
     <div
       style={{ transition: "0.9s", zIndex: "9999999999" }}
@@ -82,7 +108,7 @@ const Modal = ({ hide, content, title, ...props }) => {
     >
       <div className="flex items-end justify-center min-h-screen p-0 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div className="absolute inset-0 bg-black opacity-70 cursor-pointer"></div>
+          <div className="modal-backdrop absolute inset-0 opacity-80 cursor-pointer"></div>
         </div>
         <div className="modal-container">
           <AnimatePresence className="w-full">
@@ -106,8 +132,9 @@ const Modal = ({ hide, content, title, ...props }) => {
                   maxWidth: "800px",
                   width: "100%",
                   background: "var(--bg-color)",
+                  boxShadow: "0 2px 10px rgb(0 0 0 / 15%)",
                 }}
-                className={`custom-modal inline-block align-bottom text-left shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline`}
+                className={`custom-modal inline-block align-bottom text-left transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline`}
               >
                 <div>
                   {!props.modal.modalRequired ? (
@@ -140,28 +167,91 @@ const Modal = ({ hide, content, title, ...props }) => {
                       </h2>
                     </div>
                   </div>
-                  <div className="grid gap-4 grid-cols-2">
-                    <Input label="Nom" />
-                    <Input label="Prénom" />
-                    <Input label="Email" />
-                    <Input label="Numéro de téléphone" />
-                    <Input label="Métier" />
-                    <div className="col-span-2">
-                      <TextArea label={"Un petit message"} />
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="grid gap-4 grid-cols-2">
+                      <Input
+                        required={"Votre nom est obligatoire"}
+                        register={register}
+                        name="name"
+                        label="Nom"
+                        error={errors.name}
+                        pattern={{
+                          value: /^(?!\s+$)[A-Za-zÀ-ÿ-\s-]+$/,
+                          message:
+                            "Votre nom ne doit pas être vide ou contenir des caractères spéciaux",
+                        }}
+                      />
+                      <Input
+                        required={"Votre prénom est obligatoire"}
+                        register={register}
+                        name="firstname"
+                        label="Prénom"
+                        pattern={{
+                          value: /^[A-Za-zÀ-ÿ- ]+$/i,
+                          message:
+                            "Votre prénom ne doit pas être vide ou contenir des caractères spéciaux",
+                        }}
+                        error={errors.firstname}
+                      />
+                      <Input
+                        pattern={{
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message:
+                            "Le format de votre adresse email est incorrect",
+                        }}
+                        required={"Votre adresse email est obligatoire"}
+                        register={register}
+                        name="email"
+                        label="Email"
+                        error={errors.email}
+                      />
+                      <Input
+                        register={register}
+                        name="phone"
+                        label="Numéro de téléphone"
+                      />
+                      <Input register={register} name="job" label="Métier" />
+                      <div className="col-span-2">
+                        <TextArea
+                          pattern={{
+                            value: /^(?!\s+$)[A-Za-zăâîșțĂÂÎȘȚ\s-]+$/,
+                            message: "Un message est obligatoire",
+                          }}
+                          required={"Un message est obligatoire"}
+                          register={register}
+                          error={errors.message}
+                          name="message"
+                          label={"Un petit message"}
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex justify-end space-x-4 mt-7">
-                    <button
-                      onClick={() => props.hideModal()}
-                      style={{ background: "#e43052" }}
-                    >
-                      Annuler
-                    </button>
-                    <button className="flex space-x-2 items-center">
-                      <span> Envoyer </span> <ChatIcon className="h-5" />
-                    </button>
-                  </div>
+                    <div className="flex justify-end space-x-4 mt-7">
+                      <button
+                        onClick={() => props.hideModal()}
+                        style={{ background: "#e43052" }}
+                      >
+                        Annuler
+                      </button>
+                      <button
+                        disabled={
+                          loading === true ? true : sent === true ? true : false
+                        }
+                        type="submit"
+                        className="flex space-x-2 items-center"
+                      >
+                        {loading && <CircularProgress color="inherit" />}{" "}
+                        {!loading && !sent && (
+                          <>
+                            <span> Envoyer </span> <ChatIcon className="h-5" />{" "}
+                          </>
+                        )}
+                        {!loading && sent && (
+                          <span>Votre message a bien été envoyé! </span>
+                        )}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </motion.div>

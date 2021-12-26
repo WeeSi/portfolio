@@ -9,7 +9,7 @@ function Projects() {
       style={{ background: "var(--bg-color-alt)" }}
     >
       <div className="screen-padding">
-        <h2 className="title font-bold text-xl text-white">
+        <h2 className="title font-bold text-3xl text-white">
           Derniers projets.
         </h2>
         <div
@@ -159,7 +159,7 @@ function Projects() {
                   style={{ fontWeight: "300", color: "white" }}
                 >
                   {" "}
-                  En cours - 2021{" "}
+                  2019{" "}
                 </span>
 
                 <h2
