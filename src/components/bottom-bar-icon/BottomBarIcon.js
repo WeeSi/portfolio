@@ -5,14 +5,25 @@ import ScrollIndicator from '../scroll-indicator/ScrollIndicator'
 function BottomBarIcon(props) {
     return (
         <div className="screen-padding bottom-bar-icons">
-            <div>
-                <i className="fab text-white fa-facebook"></i>
-                <i className="fab text-white fa-instagram"></i>
-                <i className="fab text-white fa-linkedin-in"></i>
-                <i className="fab text-white fa-github-alt"></i>
+            <div className="flex space-x-2 items-center">
+                <div style={{ background: "#ededed" }} className="cursor-pointer inline-flex items-center p-3 rounded-full">
+                    <i className="fab text-black fa-facebook"></i>
+                </div>
+
+                <div style={{ background: "#ededed" }} className="cursor-pointer inline-flex items-center p-3 rounded-full">
+                    <i className="fab text-black fa-github-alt"></i>
+                </div>
+
+                <div style={{ background: "#ededed" }} className="cursor-pointer inline-flex items-center p-3 rounded-full">
+                    <i className="fab text-black fa-linkedin-in"></i>
+                </div>
+
+                <div style={{ background: "#ededed" }} className="cursor-pointer inline-flex items-center p-3 rounded-full">
+                    <i className="fab text-black fa-instagram"></i>
+                </div>
             </div>
             <ScrollIndicator />
-            <DarkModeSwitcher setDark={props.setDark}/>
+            <DarkModeSwitcher setDark={props.setDark} />
         </div>
     )
 }

@@ -6,11 +6,12 @@
         --dot-size: 0.25rem;
         --bg-color:#fafaff;
         --mouse-color:#252525;
-        --color: #252525 ;
+        --color: #18171c ;
         --active-background:#ffffff9c;
         --bg-color-alt:#52148c;
         --lines-color:#eeeeee8c;
       --button-color:#ff6446;
+      --text-color:rgb(98 98 98);
 
     }
     .bg-dark {
@@ -20,6 +21,7 @@
       --lines-color:#eeeeee2e;
       --color:white;
       --button-color:#ff6446;
+      --text-color:rgb(207 207 207);
       color: white;
     }
   }
@@ -30,27 +32,23 @@
     transition: 0.5s;
 }
 
-.App:after {
-    content: ' ';
-    position: absolute;
-    height: 180px;
-    bottom: -67px;
-    left: 0;
-    right: 0;
-    background: var(--bg-color-alt);
-    transform: skewY(-5deg);
-    -webkit-transform: skewY(-3deg);
-    -moz-transform: skewY(-3deg);
-    -ms-transform: skewY(-3deg);
-    -o-transform: skewY(-3deg);
-    z-index: 0;
-    width: 100%;
-}
+// .about:after {
+//     content: ' ';
+//     position: absolute;
+//     height: 180px;
+//     bottom: -67px;
+//     left: 0;
+//     right: 0;
+//     background: var(--bg-color-alt);
+//     transform: skewY(-5deg);
+//     -webkit-transform: skewY(-3deg);
+//     -moz-transform: skewY(-3deg);
+//     -ms-transform: skewY(-3deg);
+//     -o-transform: skewY(-3deg);
+//     z-index: 0;
+//     width: 100%;
+// }
 
-h1,h2,h3,h4,h5,h6{
-    margin: 0;
-    color: var(--color);
-}
 
 h1{
     font-size: 47px;
@@ -72,22 +70,10 @@ h1{
 }
 
 .experiences-list .experiences-list-block {
-    border-left: 2px solid #ff6446;
-    padding-left: 25px;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-.experiences-list .experiences-list-block:before {
-    width: 12px;
-    height: 12px;
-    border: 2px solid #ff6446;
-    position: absolute;
-    background: #ff6446;
-    content: "";
-    border-radius: 50%;
-    left: -9px;
-    top: -16px;
+  border-top: 2px solid;
+  padding-bottom: 50px;
+  position: relative;
+  padding-top: 20px;
 }
 
 .experiences-list-block-title {
@@ -133,6 +119,7 @@ h1.desc-me{
     height: 8px;
     position: absolute;
     top: -15px;
+    border-radius: 9999px;
 }
 
 .app-bar{
@@ -177,8 +164,8 @@ h1.desc-me{
 }
 
 button{
-    padding: 10px 15px;
-    border-radius: 7px;
+    padding: 20px 25px;
+    border-radius: 18px;
     border: 0;
     outline: none;
     background: var(--button-color);
@@ -223,7 +210,7 @@ ul{
 .nav .nav-item, .nav-item{
     cursor: pointer;
     position: relative;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color);
 }
 
@@ -236,7 +223,7 @@ ul{
     position: absolute;
     bottom: -15px;
     left: 0;
-    border-radius: 5px;
+    border-radius: 999999px;
 }
 
 .no-pd-top{
@@ -560,7 +547,7 @@ label {
   text-align: left;
   padding: 23px 30px 21px;
   letter-spacing: 0.4px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: none;
   color: #fff;
   border: none;
@@ -589,4 +576,106 @@ label {
 /* Handle on hover */
 .custom-scroll-bar::-webkit-scrollbar-thumb:hover {
   opacity: 0.7;
+}
+
+.input{
+  outline: none;
+  border: none;
+  background: #bfbfbf40;
+  width: 100%;
+  padding: 13px 20px 13px 20px;
+  border-radius: 15px !important;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.input:hover {
+  cursor: text;
+  box-shadow:0 0 0 0.2rem #6d359f8c !important;
+  background-color: #bfbfbf5c !important;
+}
+
+.input:focus {
+  cursor: text;
+  box-shadow:0 0 0 0.2rem #6d359f8c !important;
+  background-color: #bfbfbf5c !important;
+  border: 1px solid #aa4bff !important;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.about-img, .scroll-down {
+	transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+
+article img{
+  transition: all ease 0.4s;
+}
+
+article:hover img{
+  transform: translateY(-20px);
+}
+article{
+  padding: 15px;
+  border-radius: 10px;
+  transition: all ease 0.4s;
+}
+
+article:hover{
+  background-color: #410678;
+}
+
+.article-content p {
+  margin: 15px 0px;
+  max-width: 1000px;
+}
+
+.js-scroll{
+  transition: all 200ms cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+}
+
+.js-scroll::before {
+  position: absolute;
+  left: 0;
+  top: -33px;
+  font-size: 3em;
+  margin-right: 24px;
+}
+
+.js-scroll span {
+  position: relative;
+  top: 0;
+  margin-left: 20px;
+}
+
+.js-scroll::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  bottom: -6px;
+  left: -9px;
+  border-radius: 100%;
+  border: 1px solid var(--text-color);
+  transition: all 200ms cubic-bezier(.4,0,.2,1);
+  z-index: -1;
+  cursor: pointer;
+}
+
+.js-scroll:hover::after{
+  transform: scale(1.3);
+  background:#ff6446;
 }

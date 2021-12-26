@@ -1,24 +1,43 @@
 import './App.scss';
-import { useState } from 'react';
-import About from './components/about/About';
+import React, { useState } from 'react';
+import Home from './Home';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import Article from './Article';
 import AppBar from './components/appBar/AppBar';
-import Footer from './components/footer/Footer';
-import Skills from './components/skills/Skills';
-import Experiences from './components/experiences/Experiences';
+import Footer from "./components/footer/Footer";
+import Modal from "./components/modal/Modal";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  const [dark, setDark] = useState(localStorage.dark === "true" ? true : false);
 
-  const [dark, setDark] = useState(false);
+  const changeMode = () => {
+    let prevDark = dark;
+    setDark(!prevDark)
 
+    localStorage.dark = !prevDark;
+  }
   return (
     <div className={`App ${dark ? 'bg-dark' : 'bg-white'}`}>
       <AppBar />
-      <About setDark={() => setDark(!dark)} />
-      <Skills />
-      <Experiences />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home setDark={() => changeMode()} />} />
+          <Route path="article/:id" element={<Article />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
+      {props.modal.modalOpen && <Modal />}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  modal: state.modal,
+});
+
+export default connect(mapStateToProps)(App);
