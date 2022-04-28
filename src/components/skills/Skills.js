@@ -35,7 +35,7 @@ function Skills() {
                 </div>
                 <Slider ref={slider => (customSlider.current = slider)} {...settings} style={{ position: 'relative', zIndex: '1', marginTop: '50px' }}>
                     <div>
-                        <img width="150" style={{ margin: "auto" }} src={require('../../image/unrealengine.png')} />
+                        <img  width="150" style={{ margin: "auto", filter:"invert(1)" }} src={require('../../image/unrealengine.png')} />
                     </div>
                     <div>
                         <img width="150" style={{ margin: "auto" }} src={require('../../image/mongodb.png')} />

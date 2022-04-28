@@ -8,7 +8,16 @@ function AppBar(props) {
 
 
     return (
-        <div style={{ width: '100%', position: 'fixed', zIndex: '20', transition: '0.7s', top:"0", backdropFilter:"blur(7px)", background:"#10101080" }}>
+        <div 
+        style={{ width: '100%', 
+                 position: 'fixed', 
+                 zIndex: '20', 
+                 transition: '0.7s', 
+                 top:"0", 
+                 backdropFilter:"blur(5px)", 
+                 background:"#10101080",
+                 borderBottom:"1px solid #1e1e1e"
+        }}>
             <div className="app-bar">
                 <div className="logo-container">
                     <Link to="/" >
