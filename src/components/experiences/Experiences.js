@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Experiences() {
     return (
-        <div id="exp" className="next-screen">
+        <div className="next-screen">
             <div className="screen-padding md:px-20 px-4">
                 <h2 className="title font-bold text-3xl">Capacités & <br /> Expériences.</h2>
                 <div style={{ marginTop: '50px' }}>
@@ -14,7 +15,7 @@ function Experiences() {
                                 </p>
                             </div>
 
-                            <h2 className="font-bold text-2xl mb-7">Capacités</h2>
+                            <h2 className="font-bold text-xl mb-7">Capacités</h2>
                             <div className="grid md:grid-cols-3 grid-cols-2 gap-y-8 gap-3">
                                 <div>
                                     <div className="rounded-full p-5" style={{ background: "#ededed", width: "fit-content" }}>
@@ -98,21 +99,27 @@ function Experiences() {
                             </div>
                         </div>
                         <div className="about-me-info text experiences-list">
-                            <h2 className="font-bold text-2xl mb-7">Expériences</h2>
+                            <h2 className="font-bold text-xl mb-7">Expériences</h2>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Egiteko</p>
-                                <p className="experiences-list-block-date">2020 - maintenant</p>
+                                <p className="experiences-list-block-date">2020 - present</p>
                                 <p className="experiences-list-block-info">
                                     Junior développeur full stack en alternance
                                 </p>
+                                <a target="_blank" href="https://www.egiteko.com">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
 
                             <div className="experiences-list-block">
-                                <p className="experiences-list-block-title">Usein</p>
+                                <p className="experiences-list-block-title">Infans</p>
                                 <p className="experiences-list-block-date">2019 - 2020</p>
                                 <p className="experiences-list-block-info">
                                     Junior développeur full stack en alternance
                                 </p>
+                                <a target="_blank" href="https://infans.fr/">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Cas GSB</p>
@@ -120,6 +127,9 @@ function Experiences() {
                                 <p className="experiences-list-block-info">
                                     Création d'un site et d'une application dans le cadre du GSB
                                 </p>
+                                <a target="_blank" href="https://franckehui.fr/#/login">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Infomag</p>
@@ -127,6 +137,9 @@ function Experiences() {
                                 <p className="experiences-list-block-info">
                                     Création du site Infomag
                                 </p>
+                                <a target="_blank" href="https://infomag-site.fr">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Un projet pour un sourire</p>

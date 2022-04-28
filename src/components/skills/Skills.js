@@ -1,58 +1,84 @@
-import React from 'react'
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/outline';
+import React, { useRef } from 'react'
 import Slider from "react-slick";
 
 function Skills() {
 
+    const customSlider = useRef();
+
     const settings = {
         slidesToShow: 5,
-        autoplay: true,
-        autoplaySpeed: 1000,
+        autoplay: false,
+        autoplaySpeed: 0,
         arrows: false,
         dots: false,
-        speed: 3000,
+        speed: 1800,
         infinite: true,
     };
 
     return (
-        <div id="skills" className="bg-alt skills next-screen md:mt-0 mt-10">
+        <div className="bg-alt skills next-screen md:mt-0 mt-10">
             <div className="screen-padding md:px-20 px-4">
-                <h1 className="title font-bold text-3xl text-white">Compétences.</h1>
+                <h1 className="title font-bold text-3xl text-white">Compétence.</h1>
             </div>
-            <Slider {...settings} className="space-x-2" style={{ position: 'relative', zIndex: '1', marginTop: '50px', display: "flex", alignItems: "center" }}>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/react.png')} />
+            <div className='relative skills-slider-content'>
+                <div className='absolute z-10 slider-button button-left'>
+                    <div onClick={() => customSlider.current.slickPrev()} className='flex items-center justify-center' style={{ borderRadius: "999px", border: "1px solid white", width: "50px", height: "50px" }}>
+                        <ArrowLeftIcon className='text-white h-5' />
+                    </div>
                 </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/angular.png')} />
+
+                <div className='absolute z-10 slider-button button-right'>
+                    <div onClick={() => customSlider.current.slickNext()} className='flex items-center justify-center' style={{ borderRadius: "999px", border: "1px solid white", width: "50px", height: "50px" }}>
+                        <ArrowRightIcon className='text-white h-5' />
+                    </div>
                 </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/C++.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/css.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/git.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/html5.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/ionic.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/php.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/sass.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/vuejs.png')} />
-                </div>
-                <div>
-                    <img width="150" style={{ margin: "auto" }} src={require('../../image/nestjs.png')} />
-                </div>
-            </Slider>
+                <Slider ref={slider => (customSlider.current = slider)} {...settings} style={{ position: 'relative', zIndex: '1', marginTop: '50px' }}>
+                    <div>
+                        <img  width="150" style={{ margin: "auto", filter:"invert(1)" }} src={require('../../image/unrealengine.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/mongodb.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/node.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/react.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/angular.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/C++.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/css.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/git.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/html5.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/ionic.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/php.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/sass.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/vuejs.png')} />
+                    </div>
+                    <div>
+                        <img width="150" style={{ margin: "auto" }} src={require('../../image/nestjs.png')} />
+                    </div>
+                </Slider>
+            </div>
+
         </div>
     )
 }

@@ -13,20 +13,15 @@ import Modal from "./components/modal/Modal";
 import { connect } from "react-redux";
 
 function App(props) {
-  const [dark, setDark] = useState(localStorage.dark === "true" ? true : false);
+  const [dark, setDark] = useState(true);
 
-  const changeMode = () => {
-    let prevDark = dark;
-    setDark(!prevDark)
 
-    localStorage.dark = !prevDark;
-  }
   return (
     <div className={`App ${dark ? 'bg-dark' : 'bg-white'}`}>
       <BrowserRouter>
-        <AppBar dark={dark} setDark={() => changeMode()} />
+        <AppBar />
         <Routes>
-          <Route path="/" element={<Home setDark={() => changeMode()} />} />
+          <Route path="/" element={<Home setDark={() => console.log('test')} />} />
           <Route path="article/:id" element={<Article />} />
         </Routes>
         <Footer />

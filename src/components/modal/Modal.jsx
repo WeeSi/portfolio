@@ -108,7 +108,7 @@ const Modal = ({ hide, content, title, ...props }) => {
     >
       <div className="flex items-center justify-center min-h-screen p-0 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div className="modal-backdrop absolute inset-0 opacity-80 cursor-pointer"></div>
+          <div className="modal-backdrop absolute inset-0 cursor-pointer"></div>
         </div>
         <div className="modal-container">
           <AnimatePresence className="w-full">
