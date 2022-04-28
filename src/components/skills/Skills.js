@@ -8,6 +8,7 @@ function Skills() {
 
     const settings = {
         slidesToShow: 5,
+        slidesToScroll: 5,
         autoplay: false,
         autoplaySpeed: 0,
         arrows: false,
