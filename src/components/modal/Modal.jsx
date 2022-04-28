@@ -104,9 +104,9 @@ const Modal = ({ hide, content, title, ...props }) => {
   return (
     <div
       style={{ transition: "0.9s", zIndex: "9999999999" }}
-      className="fixed inset-0 overflow-hidden"
+      className="fixed inset-0 overflow-auto"
     >
-      <div className="flex items-end justify-center min-h-screen p-0 text-center sm:block sm:p-0">
+      <div className="flex items-center justify-center min-h-screen p-0 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="modal-backdrop absolute inset-0 opacity-80 cursor-pointer"></div>
         </div>
@@ -134,9 +134,9 @@ const Modal = ({ hide, content, title, ...props }) => {
                   background: "var(--bg-color)",
                   boxShadow: "0 2px 10px rgb(0 0 0 / 15%)",
                 }}
-                className={`custom-modal inline-block align-bottom text-left transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline`}
+                className={`custom-modal my-2 md:my-0 inline-block align-bottom text-left transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline`}
               >
-                <div>
+                <div className="md:block hidden">
                   {!props.modal.modalRequired ? (
                     <div
                       style={{
@@ -155,7 +155,7 @@ const Modal = ({ hide, content, title, ...props }) => {
                     </div>
                   ) : null}
                 </div>
-                <div style={{ padding: "50px" }} className="modal-container">
+                <div className="modal-container md:p-11 p-4">
                   <div className="text-center sm:flex sm:items-center mb-10">
                     <div className="relative w-full text-center sm:text-center">
                       <h2
@@ -168,7 +168,7 @@ const Modal = ({ hide, content, title, ...props }) => {
                     </div>
                   </div>
                   <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="grid gap-4 grid-cols-2">
+                    <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                       <Input
                         required={"Votre nom est obligatoire"}
                         register={register}
@@ -211,7 +211,7 @@ const Modal = ({ hide, content, title, ...props }) => {
                         label="Numéro de téléphone"
                       />
                       <Input register={register} name="job" label="Métier" />
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <TextArea
                           pattern={{
                             value: /^(?!\s+$)[A-Za-zăâîșțĂÂÎȘȚ\s-]+$/,

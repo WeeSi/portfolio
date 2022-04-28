@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 function Projects() {
   return (
     <div
+    id="projects"
       className="next-screen mb-16"
       style={{ background: "var(--bg-color-alt)" }}
     >
-      <div className="screen-padding">
+      <div className="screen-padding md:px-20 px-4">
         <h2 className="title font-bold text-3xl text-white">
           Derniers projets.
         </h2>
         <div
-          className="grid grid-cols-3 gap-y-9 gap-6"
+          className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-y-9 gap-6"
           style={{ marginTop: "50px" }}
         >
           <article className="cursor-pointer px-4">

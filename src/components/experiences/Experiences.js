@@ -2,11 +2,11 @@ import React from 'react';
 
 function Experiences() {
     return (
-        <div className="next-screen">
-            <div className="screen-padding">
+        <div id="exp" className="next-screen">
+            <div className="screen-padding md:px-20 px-4">
                 <h2 className="title font-bold text-3xl">Capacités & <br /> Expériences.</h2>
                 <div style={{ marginTop: '50px' }}>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-y-11 gap-4">
                         <div>
                             <div className="mb-10">
                                 <p style={{ maxWidth: "400px" }}>
@@ -14,8 +14,8 @@ function Experiences() {
                                 </p>
                             </div>
 
-                            <h2 className="font-bold text-xl mb-7">Capacités</h2>
-                            <div className="grid grid-cols-3 gap-y-8 gap-3">
+                            <h2 className="font-bold text-2xl mb-7">Capacités</h2>
+                            <div className="grid md:grid-cols-3 grid-cols-2 gap-y-8 gap-3">
                                 <div>
                                     <div className="rounded-full p-5" style={{ background: "#ededed", width: "fit-content" }}>
                                         <svg fill="black" xmlns="http://www.w3.org/2000/svg" version="1.0" width="25pt" height="25pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
@@ -98,10 +98,10 @@ function Experiences() {
                             </div>
                         </div>
                         <div className="about-me-info text experiences-list">
-                            <h2 className="font-bold text-xl mb-7">Expériences</h2>
+                            <h2 className="font-bold text-2xl mb-7">Expériences</h2>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Egiteko</p>
-                                <p className="experiences-list-block-date">2020 - present</p>
+                                <p className="experiences-list-block-date">2020 - maintenant</p>
                                 <p className="experiences-list-block-info">
                                     Junior développeur full stack en alternance
                                 </p>

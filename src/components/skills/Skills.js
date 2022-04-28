@@ -6,19 +6,19 @@ function Skills() {
     const settings = {
         slidesToShow: 5,
         autoplay: true,
-        autoplaySpeed: 0,
+        autoplaySpeed: 1000,
         arrows: false,
         dots: false,
-        speed: 1500,
+        speed: 3000,
         infinite: true,
     };
 
     return (
-        <div className="bg-alt skills next-screen">
-            <div className="screen-padding">
-                <h1 className="title font-bold text-3xl text-white">Compétence.</h1>
+        <div id="skills" className="bg-alt skills next-screen md:mt-0 mt-10">
+            <div className="screen-padding md:px-20 px-4">
+                <h1 className="title font-bold text-3xl text-white">Compétences.</h1>
             </div>
-            <Slider {...settings} style={{ position: 'relative', zIndex: '1', marginTop: '50px' }}>
+            <Slider {...settings} className="space-x-2" style={{ position: 'relative', zIndex: '1', marginTop: '50px', display: "flex", alignItems: "center" }}>
                 <div>
                     <img width="150" style={{ margin: "auto" }} src={require('../../image/react.png')} />
                 </div>

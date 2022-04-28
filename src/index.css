@@ -2,12 +2,12 @@ body {
   margin: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif !important;
-  scroll-behavior: smooth;
 }
 
 html,#root, .App{
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 code {

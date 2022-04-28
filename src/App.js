@@ -23,14 +23,14 @@ function App(props) {
   }
   return (
     <div className={`App ${dark ? 'bg-dark' : 'bg-white'}`}>
-      <AppBar />
       <BrowserRouter>
+        <AppBar dark={dark} setDark={() => changeMode()} />
         <Routes>
           <Route path="/" element={<Home setDark={() => changeMode()} />} />
           <Route path="article/:id" element={<Article />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
       {props.modal.modalOpen && <Modal />}
     </div>
   );
