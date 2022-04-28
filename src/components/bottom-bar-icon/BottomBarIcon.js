@@ -23,7 +23,6 @@ function BottomBarIcon(props) {
                 </div>
             </div>
             <ScrollIndicator />
-            <DarkModeSwitcher setDark={props.setDark} />
         </div>
     )
 }

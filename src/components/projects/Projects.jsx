@@ -16,13 +16,41 @@ function Projects() {
           className="grid grid-cols-3 gap-y-9 gap-6"
           style={{ marginTop: "50px" }}
         >
+          <Link to="/article/4">
           <article className="cursor-pointer px-4">
             <div className="mb-5">
               <img
                 width="640"
                 height="283"
                 className="object-cover"
-                src="https://franckehui.fr/img/145188310_739225026973102_2912438126496726352_n.png"
+                src={require('../../image/next-music-app.png')}
+              />
+            </div>
+            <div className="mb-4">
+              <span
+                className="block mb-4 text-sm"
+                style={{ fontWeight: "300", color: "white" }}
+              >
+                {" "}
+                2022{" "}
+              </span>
+
+              <h2
+                style={{ fontWeight: "500", fontSize: "17px", color: "white" }}
+              >
+                [Next Music App] <br /> Application web de musique créée en cours de dev.
+              </h2>
+            </div>
+            <ArrowRightIcon className="h-5 text-white" />
+          </article>
+          </Link>
+          <article className="cursor-pointer px-4">
+            <div className="mb-5">
+              <img
+                width="640"
+                height="283"
+                className="object-cover"
+                src={require('../../image/sports-field.png')}
               />
             </div>
             <div className="mb-4">

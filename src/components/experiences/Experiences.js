@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Experiences() {
     return (
@@ -105,14 +106,20 @@ function Experiences() {
                                 <p className="experiences-list-block-info">
                                     Junior développeur full stack en alternance
                                 </p>
+                                <a target="_blank" href="https://www.egiteko.com">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
 
                             <div className="experiences-list-block">
-                                <p className="experiences-list-block-title">Usein</p>
+                                <p className="experiences-list-block-title">Infans</p>
                                 <p className="experiences-list-block-date">2019 - 2020</p>
                                 <p className="experiences-list-block-info">
                                     Junior développeur full stack en alternance
                                 </p>
+                                <a target="_blank" href="https://infans.fr/">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Cas GSB</p>
@@ -120,6 +127,9 @@ function Experiences() {
                                 <p className="experiences-list-block-info">
                                     Création d'un site et d'une application dans le cadre du GSB
                                 </p>
+                                <a target="_blank" href="https://franckehui.fr/#/login">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Infomag</p>
@@ -127,6 +137,9 @@ function Experiences() {
                                 <p className="experiences-list-block-info">
                                     Création du site Infomag
                                 </p>
+                                <a target="_blank" href="https://infomag-site.fr">
+                                    <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                </a>
                             </div>
                             <div className="experiences-list-block">
                                 <p className="experiences-list-block-title">Un projet pour un sourire</p>

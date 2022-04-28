@@ -28,9 +28,6 @@ const Article = () => {
         maxWidth: "1440px",
       }}
     >
-      <div className="mb-11">
-        <img src="https://franckehui.fr/portfolio/projet/angular/image/gsb_login.PNG" />
-      </div>
       <div className="article-content">
         <div dangerouslySetInnerHTML={{ __html: data }}></div>
       </div>

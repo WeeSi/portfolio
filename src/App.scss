@@ -1,29 +1,13 @@
 :root {
-    .bg-white{
-        --bg-planet-bright: #ff6446;
-        --bg-planet-shadow: #828894;
-        --bg-planet-lightshadow: #D7D7D820;
-        --dot-size: 0.25rem;
-        --bg-color:#fafaff;
-        --mouse-color:#252525;
-        --color: #18171c ;
-        --active-background:#ffffff9c;
-        --bg-color-alt:#52148c;
-        --lines-color:#eeeeee8c;
-      --button-color:#ff6446;
-      --text-color:rgb(98 98 98);
-      --bg-backdrop: rgba(255,255,255,.97);
-
-    }
     .bg-dark {
-      --bg-color: #410678;
+      --bg-color: #101010;
       --mouse-color:white;
-      --bg-color-alt:#52148c;
+      --bg-color-alt:#161616;
       --lines-color:#eeeeee2e;
       --color:white;
       --button-color:#ff6446;
       --text-color:rgb(207 207 207);
-      --bg-backdrop: #52148c;
+      --bg-backdrop: #2a2a2a;
       color: white;
     }
   }
@@ -166,13 +150,14 @@ h1.desc-me{
 }
 
 button{
-    padding: 20px 25px;
-    border-radius: 18px;
-    border: 0;
-    outline: none;
-    background: var(--button-color);
-    color: white;
-    cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 18px;
+  border: 0;
+  outline: none;
+  background: var(--button-color);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .image-me{
@@ -564,7 +549,7 @@ label {
 
 /* Track */
 .custom-scroll-bar::-webkit-scrollbar-track {
-  background: transparent;
+  background: #101010;
 }
  
 /* Handle */
@@ -621,13 +606,23 @@ label {
 	animation: float 3s ease-in-out infinite;
 }
 
-article img{
-  transition: all ease 0.4s;
+article{
+  img, svg{
+    transition: all ease 0.4s;
+  }  
 }
 
-article:hover img{
+article:hover{
+ img{
   transform: translateY(-20px);
 }
+
+svg{
+  transform:translateX(10px)
+}
+
+}
+
 article{
   padding: 15px;
   border-radius: 10px;
@@ -635,13 +630,31 @@ article{
 }
 
 article:hover{
-  background-color: #410678;
+  background-color: #101010;
 }
 
-.article-content p {
-  margin: 15px 0px;
-  max-width: 1000px;
+.article-content  {
+  max-width: 800px;
+  margin: auto;
+
+  p{
+    margin: 15px 0px;
+    max-width: 1000px;
+  }
+
+  img{
+    max-height: 500px !important;
+    max-width: 800px;
+    margin: auto !important;
+    object-fit: contain;
+  }
+
+  .download p{
+    max-width: 100% !important;
+  }
+
 }
+
 
 .js-scroll{
   transition: all 200ms cubic-bezier(.4,0,.2,1);
@@ -683,7 +696,8 @@ article:hover{
 }
 
 .modal-backdrop{
-  background-color: var(--bg-backdrop);
+  background-color: #0808088f;
+  backdrop-filter: blur(3px);
 }
 
 .input-error:hover {
@@ -698,3 +712,56 @@ article:hover{
   border: 1px solid #e43052 !important;
   background-color: #e4305229 !important;
 }
+
+.lets-talk-2019 i{
+  transition: 0.3s;
+}
+
+.lets-talk-2019 button:hover i{
+  transform: translateX(-20px);
+}
+
+.skills-slider-content:hover{
+  .slider-button{
+    touch-action: initial;
+    user-select: none;
+    opacity: 1;
+  }
+}
+
+.slider-button{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+    transition: 0.4s;
+    opacity: 0;
+    touch-action: none;
+    user-select: none;
+}
+
+
+.slider-button.button-left{
+  left: 20px;
+  cursor: pointer;
+}
+
+.slider-button.button-right{
+  right: 20px;
+  cursor: pointer;
+}
+
+.button-left,.button-right{
+  transition:0.3s;
+}
+
+.button-left div:hover,.button-right div:hover{
+      background-color: #161616;
+  }
+
+  .skills-slider-content img{
+    width: 150px;
+    height: 150px ;
+    object-fit: contain;
+  }

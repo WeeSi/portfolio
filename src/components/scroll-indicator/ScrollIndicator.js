@@ -6,7 +6,7 @@ function ScrollIndicator() {
         <div className="relative">
             <div className="js-scroll icon-long-arrow-down relative">
 
-                <div className="absolute scroll-down" style={{ top: "-20px", left: "-4px", zIndex:"2" }}>
+                <div className="absolute scroll-down" style={{ top: "-20px", left: "-4.5px", zIndex:"2" }}>
                     <ArrowDownIcon className="h-6" />
                 </div>
             </div>

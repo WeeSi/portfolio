@@ -7,10 +7,10 @@ const Footer = (props) => {
     <section className="section-row lets-talk lets-talk-2019">
       <div className="screen-padding content-container z-10 relative justify-between flex items-center">
         <div className="text-content">
-          <h4 className="wow fadeInUp font-bold">
+          <h4 className="wow font-bold">
             Intéressé par une collaboration?
           </h4>
-          <p className="wow fadeInUp text-xl">
+          <p className="wow text-xl">
             Mettez-moi au défi pour créer vos nouveaux projets innovants.
           </p>
         </div>
@@ -19,14 +19,14 @@ const Footer = (props) => {
             let data = {
               modalOpen: true,
               modalRequired: false,
-              modalTitle: "Parlons.",
+              modalTitle: "Discutons.",
             };
 
             props.openModal(data);
           }}
           className="shadow-md btn btn-default btn-foot wow fadeInUp flex justify-between items-center"
         >
-          <span>Parlons</span> <i className="fa fa-chevron-right"></i>
+          <span>Discutons</span> <i className="fa fa-chevron-right"></i>
         </button>
       </div>
       <div style={{ paddingTop: "100px" }} className="screen-padding z-10">

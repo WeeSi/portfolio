@@ -6,13 +6,12 @@ export default function About(props) {
         <div className="about f-height screen-padding no-pd-top no-pd-bot">
             <div className="flex-container">
                 <div className="image-me relative">
-                    <h2 className="quote text-lg text-right font-medium absolute -top-5 right-0 italic" style={{maxWidth:"230px", fontSize:"18px", fontWeight:"600"}}>" People ignore design that ignores people "</h2>
                     <img src="https://franckehui.fr/img/296bd6fc2ffdb7bd59d0b683185b6998_burned.png" alt="" className="about-img" />
                 </div>
             </div>
             <div className="flex-container">
                 <div>
-                    <h1 className="desc-me font-bold text-xxl mb-10">Je suis créateur d'application mobile, web et logiciel.</h1>
+                    <h1 className="desc-me font-bold text-4xl mb-10">Je suis créateur d'application mobile, web et logiciel.</h1>
                     <div className="mb-10">
                         <p style={{ color: "var(--text-color)" }} className="wow fadeInUp text-xl">
                             Passionné depuis toujours d’informatique j’ai décidé d’en faire mon métier.
