@@ -84,6 +84,10 @@ const Modal = ({ hide, content, title, ...props }) => {
         }, 100);
       }
     }
+
+    if(event.keyCode === 13){
+      event.preventDefault();
+    }
   };
 
   const onSubmit = async (inputsData) => {
@@ -167,7 +171,7 @@ const Modal = ({ hide, content, title, ...props }) => {
                       </h2>
                     </div>
                   </div>
-                  <form onSubmit={handleSubmit(onSubmit)}>
+                  <form>
                     <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                       <Input
                         required={"Votre nom est obligatoire"}
@@ -234,10 +238,11 @@ const Modal = ({ hide, content, title, ...props }) => {
                         Annuler
                       </button>
                       <button
+                        onClick={handleSubmit(onSubmit)}
                         disabled={
                           loading === true ? true : sent === true ? true : false
                         }
-                        type="submit"
+                        type="button"
                         className="flex space-x-2 items-center"
                       >
                         {loading && <CircularProgress color="inherit" />}{" "}

@@ -38,7 +38,7 @@ export const Navigation = ({ isOpen, closeSideBar }) => (
     variants={variants}
   >
     {items.map((i) => (
-      <HashLink onClick={() => closeSideBar()} to={`${i.url}`}>
+      <HashLink key={i.name} onClick={() => closeSideBar()} to={`${i.url}`}>
         <MenuItem name={i.name} i={i} key={i.name} />
       </HashLink>
     ))}

@@ -8,7 +8,7 @@ const Article = () => {
 
   useEffect(() => {
     getArticle();
-    return () => {};
+    return () => { };
   }, []);
 
   const getArticle = async () => {
@@ -19,19 +19,21 @@ const Article = () => {
   };
 
   return (
-    <div
-      className="m-auto"
-      style={{
-        paddingTop: "150px",
-        paddingLeft: "80px",
-        paddingRight: "80px",
-        maxWidth: "1440px",
-      }}
-    >
-      <div className="article-content">
-        <div dangerouslySetInnerHTML={{ __html: data }}></div>
+    <section id="section-4">
+      <div
+        className="m-auto"
+        style={{
+          paddingTop: "150px",
+          paddingLeft: "80px",
+          paddingRight: "80px",
+          maxWidth: "1440px",
+        }}
+      >
+        <div className="article-content">
+          <div dangerouslySetInnerHTML={{ __html: data }}></div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
