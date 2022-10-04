@@ -108,8 +108,8 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Junior développeur full stack en alternance
                                     </p>
-                                    <a target="_blank" href="https://www.egiteko.com">
-                                        <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                    <a className='animate' target="_blank" href="https://www.egiteko.com">
+                                        <span className='block mt-3   text-xs'>Voir plus</span>
                                     </a>
                                 </div>
 
@@ -119,8 +119,8 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Junior développeur full stack en alternance
                                     </p>
-                                    <a target="_blank" href="https://infans.fr/">
-                                        <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                    <a className='animate' target="_blank" href="https://infans.fr/">
+                                        <span className='block mt-3   text-xs'>Voir plus</span>
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">
@@ -129,8 +129,8 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Création d'un site et d'une application dans le cadre du GSB
                                     </p>
-                                    <a target="_blank" href="https://franckehui.fr/portfolio/projet/angular/gsb/">
-                                        <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                    <a className='animate' target="_blank" href="https://franckehui.fr/portfolio/projet/angular/gsb/">
+                                        <span className='block mt-3  text-xs'>Voir plus</span>
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">
@@ -139,8 +139,8 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Création du site Infomag
                                     </p>
-                                    <a target="_blank" href="https://infomag-site.fr">
-                                        <span className='block mt-3 hover:underline cursor-pointer text-xs'>Voir plus</span>
+                                    <a target="_blank" className='animate' href="https://infomag-site.fr">
+                                        <span className='block mt-3   text-xs'>Voir plus</span>
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">

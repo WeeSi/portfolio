@@ -18,7 +18,7 @@ function Projects() {
             style={{ marginTop: "50px" }}
           >
             <Link to="/article/4">
-              <article className="cursor-pointer px-4">
+              <article className="px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -45,7 +45,7 @@ function Projects() {
                 <ArrowRightIcon className="h-5 text-white" />
               </article>
             </Link>
-            <article className="cursor-pointer px-4">
+            <article className=" px-4">
               <div className="mb-5">
                 <img
                   width="640"
@@ -74,7 +74,7 @@ function Projects() {
             </article>
 
             <a href="https://carte.formassmat-moncompte.fr/" target="_blank">
-              <article className="cursor-pointer px-4">
+              <article className=" px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -107,7 +107,7 @@ function Projects() {
             </a>
 
             <Link to="/article/2">
-              <article className="cursor-pointer px-4">
+              <article className=" px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -140,7 +140,7 @@ function Projects() {
             </Link>
 
             <Link to="/article/1">
-              <article className="cursor-pointer  px-4">
+              <article className="  px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -173,7 +173,7 @@ function Projects() {
             </Link>
 
             <a href="https://infomag-site.fr/" target="_blank">
-              <article className="cursor-pointer  px-4">
+              <article className="  px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -206,7 +206,7 @@ function Projects() {
               </article>
             </a>
 
-            <article className="cursor-pointer  px-4">
+            <article className="  px-4">
               <div className="mb-5">
                 <img
                   width="640"

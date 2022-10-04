@@ -39,7 +39,7 @@ const Footer = (props) => {
               <div className="contact-items">
                 <div className="contact-item">
                   <label>E.</label>
-                  <a href="mailto:franckehuipro@gmail.com">
+                  <a className="animate" href="mailto:franckehuipro@gmail.com">
                     franckehuipro@gmail.com
                   </a>
                 </div>
@@ -49,14 +49,13 @@ const Footer = (props) => {
               <h5 className="text text-sm uppercase font-bold">A propos</h5>
               <ul className="menu">
                 <li>
-                  <a className="menu-item">
+                  <a  className="menu-item animate">
                     A Propos
                   </a>
                 </li>
                 <li>
                   <a
-                    
-                    className="menu-item"
+                    className="menu-item animate"
                   >
                     Mes Compétences
                   </a>
@@ -64,7 +63,7 @@ const Footer = (props) => {
                 <li>
                   <a
                   
-                    className="menu-item"
+                  className="menu-item animate"
                   >
                     Mes projets
                   </a>
@@ -78,7 +77,7 @@ const Footer = (props) => {
                   <a
                     rel="noreferrer"
                     target="_blank"
-                  
+                    className="menu-item animate"
                   >
                     Github
                   </a>
@@ -87,7 +86,7 @@ const Footer = (props) => {
                   <a
                     rel="noreferrer"
                     target="_blank"
-                   
+                    className="menu-item animate"
                   >
                     Instagram
                   </a>
@@ -96,6 +95,7 @@ const Footer = (props) => {
                   <a
                     rel="noreferrer"
                     target="_blank"
+                    className="menu-item animate"
                   >
                     Dribbble
                   </a>
@@ -104,6 +104,7 @@ const Footer = (props) => {
                   <a
                     rel="noreferrer"
                     target="_blank"
+                    className="menu-item animate"
                   >
                     Linkedin
                   </a>

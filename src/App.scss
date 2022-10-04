@@ -15,7 +15,6 @@
 
 .App{
   background: var(--bg-color);
-  transition: 0.5s;
 }
 
 // .about:after {
@@ -34,6 +33,225 @@
 //     z-index: 0;
 //     width: 100%;
 // }
+
+body{
+  cursor: none !important;
+  overflow: auto;
+}
+
+a{
+  cursor: none !important;
+  position: relative;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
+a.animate{
+  width: fit-content;
+  display: block;
+  overflow: hidden;
+}
+
+a.animate:after{
+  background-color: white;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  transition: transform .6s cubic-bezier(.61,1,.88,1);
+  width: 100%;
+  right: 100%;
+}
+
+a.animate:hover:after{
+  transform: translateX(100%);
+}
+
+
+
+.cursor {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ffffffab;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim .5s infinite alternate;
+  pointer-events: none;
+  z-index: 999999999999;
+}
+
+.cursor.is-clickable{
+  width: 15px;
+  height: 15px;
+  background-color: #fffffff6;
+  border: none;
+}
+
+.drawer-button{
+  position: relative;
+}
+
+.drawer-button span:nth-child(1){
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.drawer-button span:nth-child(2){
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: 0px;
+}
+
+.drawer-button:hover{
+  span:nth-child(2){
+    top: 6px;
+  }
+  span:nth-child(1){
+    top: 1px;
+  }
+} 
+
+.close-drawer{
+  align-items: center;
+  color: white;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  right: 10px;
+  position: fixed;
+  top: 10px;
+  z-index: 105;
+  width: 46px;
+  transition: .4s cubic-bezier(.87,0,.13,1);
+  transition-delay: 0.4s;
+}
+
+.close-drawer span:nth-child(1){
+  width: 22px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.close-drawer span:nth-child(2){
+  width: 22px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.drawer{
+  max-width: 500px;
+  position: fixed;
+  width: 100%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 99999;
+  visibility: visible;
+  pointer-events: none;
+  
+  .close-drawer{
+    opacity: 0;
+  }
+
+  ul li{
+    transition-property: opacity, transform;
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(.87,0,.13,1);
+    transition-delay: calc(0.055s * var(--i));
+    transform: translateX(200px);
+    opacity: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.backdrop{
+  background-color: transparent;
+  -webkit-transition: background-color 0.6s linear, backdrop-filter 0.6s linear;
+  -ms-transition: background-color 0.6s linear, backdrop-filter 0.6s linear;
+  transition: background-color 0.6s linear, backdrop-filter 0.6s linear;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.drawer.open{
+  opacity: 1;
+  pointer-events: all;
+  .close-drawer{
+    opacity: 1;
+  }
+
+  ul li{
+    transition-property: opacity, transform;
+    transform: translate(0px);
+    transition-delay: calc(0.055s * var(--i));
+    transition-timing-function: cubic-bezier(.87,0,.13,1);
+    opacity: 1;
+  }
+
+  .backdrop{
+    background-color: var(--bg-backdrop);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    pointer-events: all;
+  }
+}
+
+.drawer-bg{
+  transition: transform .4s cubic-bezier(.87,0,.13,1);
+  transition-delay: 0.4s;
+}
+
+.drawer-bg{
+  transform: translateX(500px)
+}
+
+.drawer.open{
+  .drawer-bg{
+    transform: unset !important;
+  }
+  pointer-events: unset;
+}
+
+.drawer-bg{
+    background-color: var(--bg-color);
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform-origin: left center;
+    width: 100%;
+    z-index: 1;
+}
 
 h1{
     font-size: 50px;
@@ -123,7 +341,7 @@ h1.desc-me{
 .logo-container h2{
     font-family: 'Molle', cursive;
     font-size: 30px;
-    cursor: pointer;
+    cursor: none;
     color: var(--color);
 }
 
@@ -150,7 +368,7 @@ button{
     outline: none;
     background: var(--button-color);
     color: white;
-    cursor: pointer;
+    cursor: none;
 }
 
 .image-me{
@@ -187,7 +405,7 @@ ul{
 }
 
 .nav .nav-item, .nav-item{
-    cursor: pointer;
+    cursor: none;
     position: relative;
     font-weight: 400;
     color: var(--color);
@@ -248,7 +466,7 @@ ul{
     border: 3px white solid;
     border-radius: 50px;
     position: relative;
-    cursor: pointer;
+    cursor: none;
 }
 
 .scroller {
@@ -276,7 +494,7 @@ ul{
 }
 
 .theme-switcher{
-    cursor: pointer;
+    cursor: none;
     padding: 1rem;
     position: relative;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -538,6 +756,7 @@ label {
 
 .custom-scroll-bar::-webkit-scrollbar {
   width: 16px;
+  display: none;
 }
 
 /* Track */
@@ -547,7 +766,7 @@ label {
  
 /* Handle */
 .custom-scroll-bar::-webkit-scrollbar-thumb {
-  background: #ff6446;
+  background: #343434;
   border-radius: 8px;
   border: 4px solid transparent;
   background-clip: content-box;
@@ -667,7 +886,7 @@ article:hover{
 
 .js-scroll{
   transition: all 400ms cubic-bezier(.4,0,.2,1);
-  cursor: pointer;
+  cursor: none;
 }
 
 .js-scroll::before {
@@ -696,7 +915,7 @@ article:hover{
   border: 1px solid var(--text-color);
   transition: all 400ms cubic-bezier(.4,0,.2,1);
   z-index: 1;
-  cursor: pointer;
+  cursor: none;
 }
 
 .js-scroll:hover::after{
@@ -751,7 +970,7 @@ nav {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  cursor: pointer;
+  cursor: none;
   position: absolute;
   top: 18px;
   left: 15px;
@@ -783,7 +1002,7 @@ li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: none;
 }
 
 .icon-placeholder {
@@ -813,7 +1032,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: none;
 }
 
 .slick-track{
@@ -868,12 +1087,12 @@ li {
 
 .slider-button.button-left{
   left: 20px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .slider-button.button-right{
   right: 20px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .button-left div,.button-right div{
