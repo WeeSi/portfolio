@@ -33,8 +33,9 @@ const Footer = (props) => {
       </div>
       <div style={{ paddingTop: "100px" }} className="screen-padding md:px-20 px-4 z-10">
         <div className="footer content-container relative z-10">
-          <div className="grid md:grid-cols-3 grid-cols-1">
-            <div className="col-sm-6 col-xs-6 foot-contact">
+          <div className="grid md:grid-cols-6 grid-cols-1">
+
+            <div className="col-span-2 foot-contact">
               <a className="navbar-brand" href="https://sebostudio.com"></a>
               <div className="contact-items">
                 <div className="contact-item">
@@ -45,8 +46,8 @@ const Footer = (props) => {
                 </div>
               </div>
             </div>
+
             <div className="col-sm-2 col-xs-6 foot-about">
-              <h5 className="text text-sm uppercase font-bold">A propos</h5>
               <ul className="menu">
                 <li>
                   <a  className="menu-item animate">
@@ -71,7 +72,6 @@ const Footer = (props) => {
               </ul>
             </div>
             <div className="col-sm-2 col-xs-6 foot-social">
-              <h5 className="text text-sm uppercase font-bold">Me Suivre</h5>
               <ul className="menu">
                 <li>
                   <a

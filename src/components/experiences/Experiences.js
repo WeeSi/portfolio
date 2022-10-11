@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/outline'
 
 function Experiences() {
     return (
@@ -108,8 +109,9 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Junior développeur full stack en alternance
                                     </p>
-                                    <a className='animate' target="_blank" href="https://www.egiteko.com">
-                                        <span className='block mt-3   text-xs'>Voir plus</span>
+                                    <a className='mt-3 animate space-x-1' target="_blank" href="https://www.egiteko.com">
+                                        <span className='text-xs'>Voir plus</span>
+                                        <ChevronRightIcon className='right-chevron inline h-4' />
                                     </a>
                                 </div>
 
@@ -119,8 +121,9 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Junior développeur full stack en alternance
                                     </p>
-                                    <a className='animate' target="_blank" href="https://infans.fr/">
-                                        <span className='block mt-3   text-xs'>Voir plus</span>
+                                    <a className='animate space-x-1 mt-3' target="_blank" href="https://infans.fr/">
+                                        <span className='text-xs'>Voir plus</span>
+                                        <ChevronRightIcon className='right-chevron inline h-4' />
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">
@@ -129,8 +132,9 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Création d'un site et d'une application dans le cadre du GSB
                                     </p>
-                                    <a className='animate' target="_blank" href="https://franckehui.fr/portfolio/projet/angular/gsb/">
-                                        <span className='block mt-3  text-xs'>Voir plus</span>
+                                    <a className='animate space-x-1 mt-3' target="_blank" href="https://franckehui.fr/portfolio/projet/angular/gsb/">
+                                        <span className='text-xs'>Voir plus</span>
+                                        <ChevronRightIcon className='right-chevron inline h-4' />
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">
@@ -139,8 +143,9 @@ function Experiences() {
                                     <p className="experiences-list-block-info">
                                         Création du site Infomag
                                     </p>
-                                    <a target="_blank" className='animate' href="https://infomag-site.fr">
-                                        <span className='block mt-3   text-xs'>Voir plus</span>
+                                    <a target="_blank" className='animate mt-3' href="https://infomag-site.fr">
+                                        <span className='space-x-1 text-xs'>Voir plus</span>
+                                        <ChevronRightIcon className='right-chevron inline h-4' />
                                     </a>
                                 </div>
                                 <div className="experiences-list-block">

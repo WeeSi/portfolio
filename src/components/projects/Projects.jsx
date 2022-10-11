@@ -80,7 +80,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src="https://franckehui.fr/img/carte-formassmat.png"
+                    src={require('../../image/carte-formassmat.png')}
                   />
                 </div>
                 <div className="mb-4">
@@ -113,7 +113,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src="https://franckehui.fr/img/Logo-gsb.png"
+                    src={require('../../image/Logo-gsb.png')}
                   />
                 </div>
                 <div className="mb-4">
@@ -146,7 +146,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src="https://franckehui.fr/img/formassmat.jpg"
+                    src={require('../../image/formassmat.jpg')}
                   />
                 </div>
                 <div className="mb-4">
@@ -179,7 +179,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src="https://franckehui.fr/img/infomag-mockup.png"
+                    src={require('../../image/infomag-mockup.png')}
                   />
                 </div>
                 <div className="mb-4">
@@ -212,7 +212,7 @@ function Projects() {
                   width="640"
                   height="283"
                   className="object-cover"
-                  src="https://franckehui.fr/img/unprojetpourunsourire.png"
+                  src={require('../../image/unprojetpourunsourire.png')}
                 />
               </div>
               <div className="mb-4">

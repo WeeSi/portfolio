@@ -2,6 +2,7 @@ body {
   margin: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif !important;
+  background-color: #101010;
 }
 
 html,#root, .App{

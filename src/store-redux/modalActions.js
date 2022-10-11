@@ -1,4 +1,4 @@
-import { HIDE_MODAL, SHOW_MODAL } from "./modalReducer"
+import { HIDE_MODAL, SHOW_MODAL, TOGGLE_DRAWER } from "./modalReducer"
 
 export const openModal = (modalContent) => dispatch => {
     dispatch({
@@ -10,5 +10,12 @@ export const openModal = (modalContent) => dispatch => {
 export const hideModal = () => dispatch => {
     dispatch({
         type: HIDE_MODAL
+    })
+}
+
+export const toggleDrawer = (state) => dispatch => {
+    dispatch({
+        type: TOGGLE_DRAWER,
+        payload:state
     })
 }

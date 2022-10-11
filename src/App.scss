@@ -44,8 +44,19 @@ a{
   position: relative;
 }
 
+input, label, .MuiButtonBase-root, textarea{
+  cursor: none !important;
+}
+
 a:hover{
   text-decoration: none !important;
+  .right-chevron{
+    transform: translateX(5px);
+  }
+}
+
+.right-chevron{
+  transition: .5s cubic-bezier(.61,1,.88,1);
 }
 
 a.animate{
@@ -75,7 +86,7 @@ a.animate:hover:after{
 .cursor {
   width: 25px;
   height: 25px;
-  border: 2px solid #ffffffab;
+  border: 2px solid #fff;
   border-radius: 50%;
   position: absolute;
   transition-duration: 200ms;
@@ -83,11 +94,12 @@ a.animate:hover:after{
   animation: cursorAnim .5s infinite alternate;
   pointer-events: none;
   z-index: 999999999999;
+  mix-blend-mode: difference;
 }
 
 .cursor.is-clickable{
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: #fffffff6;
   border: none;
 }
@@ -97,33 +109,28 @@ a.animate:hover:after{
 }
 
 .drawer-button span:nth-child(1){
-  width: 100%;
+  width: 30px;
   height: 1px;
   background-color: white;
   display: block;
   position: absolute;
-  top: 0px;
+  top: 4px;
   right: 0px;
+  transition: transform .2s cubic-bezier(.65,0,.25,1);
+  transform: translate(-50%,-4px);
 }
 
 .drawer-button span:nth-child(2){
-  width: 100%;
+  width: 30px;
   height: 1px;
   background-color: white;
   display: block;
   position: absolute;
-  top: 7px;
+  top: 4px;
   right: 0px;
+  transition: transform .2s cubic-bezier(.65,0,.25,1);
+  transform: translate(-50%,4px);
 }
-
-.drawer-button:hover{
-  span:nth-child(2){
-    top: 6px;
-  }
-  span:nth-child(1){
-    top: 1px;
-  }
-} 
 
 .close-drawer{
   align-items: center;
@@ -189,6 +196,28 @@ a.animate:hover:after{
   }
 }
 
+.close-text-drawer{
+  transition: 0.5s;
+  transform: translateY(-100%);
+}
+
+.open-text-drawer{
+  transition: 0.5s;
+  transform: translateY(100%);
+}
+
+.close-text-drawer.close{
+  transform: translateY(0%);
+}
+
+.open-text-drawer.open{
+  transform: translateY(-100%);
+}
+
+.content-image-button::-webkit-scrollbar{
+  display: none;
+}
+
 .backdrop{
   background-color: transparent;
   -webkit-transition: background-color 0.6s linear, backdrop-filter 0.6s linear;
@@ -223,6 +252,16 @@ a.animate:hover:after{
     backdrop-filter: blur(5px);
     pointer-events: all;
   }
+}
+
+.content-drawer-button.open span:nth-child(1){
+  transform: translate(-50%) rotate(-45deg);
+  width: 22px;
+}
+
+.content-drawer-button.open span:nth-child(2){
+  transform: translate(-50%) rotate(45deg);
+  width: 22px;
 }
 
 .drawer-bg{
@@ -330,8 +369,7 @@ h1.desc-me{
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 15px 80px;
-    max-width: 1440px;
+    padding: 15px 45px;
     position: relative;
     z-index: 100;
     align-items: center;
@@ -725,7 +763,6 @@ label {
   display: inline-block;
   font-size: 16px;
   line-height: 20px;
-  margin: 12px 0;
   padding: 0;
   letter-spacing: 0.2px;
 }
@@ -813,7 +850,7 @@ label {
 	}
 }
 
-.about-img, .scroll-down {
+.scroll-down {
 	transform: translatey(0px);
 	animation: float 3s ease-in-out infinite;
 }

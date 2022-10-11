@@ -8,7 +8,7 @@ export default function About(props) {
             <div className="about md:flex md:h-screen md:px-20 px-4 screen-padding">
                 <div className="md:w-3/6 px-3">
                     <div className="image-me relative">
-                        <img src={require('../../image/296bd6fc2ffdb7bd59d0b683185b6998_burned.png')} alt="" className="about-img" />
+                        <img src={require('../../image/received_1291899467620740-removebg-preview.png')} alt="" className="about-img" />
                     </div>
                 </div>
                 <div className="md:w-3/6 px-3">
@@ -20,9 +20,9 @@ export default function About(props) {
                                 Je suis actuellement en dernière année d'école d'ingénieur informatique en alternance chez WeCount.
                             </p>
                         </div>
-                        <a className="about-btns flex items-center space-x-2 animate">
+                        <a className="about-btns flex items-center space-x-1 animate">
                             <span style={{padding:"0", fontSize:".9375rem", fontWeight:"600"}}>Mes projets</span>
-                            <ChevronRightIcon className='inline h-4' />
+                            <ChevronRightIcon className='right-chevron inline h-4' />
                         </a>
                     </div>
                 </div>
