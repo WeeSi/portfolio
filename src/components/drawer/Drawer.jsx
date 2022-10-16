@@ -46,100 +46,88 @@ const Drawer = (props) => {
   return (
     <div className="drawer">
       <div className="relative h-full">
-        <div className="relative z-20 right-0 pt-20 h-full">
-          <div className="px-12">
-            <ul>
-              <li style={{ "--i": 0 }} className="block w-full text-right">
-                <a>A proppos</a>
-              </li>
-              <li style={{ "--i": 1 }} className="block w-full text-right">
-                <a>Compétences</a>
-              </li>
-              <li style={{ "--i": 2 }} className="block w-full text-right">
-                <a>Expérience</a>
-              </li>
-              <li
-                style={{ "--i": 3, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
+        <div className="relative z-20 right-0 pt-20 h-full flex flex-col">
+          <div
+            style={{
+              display: "flex",
+              padding: "0px 98px",
+              alignItems: "center",
+            }}
+            className="w-full h-full"
+          >
+            <div className="flex w-full">
+              <ul
+                className="block space-y-6"
+                style={{ WebkitBoxFlex: "0.8", flex: "0.8" }}
               >
-                <a>WeCount</a>
-              </li>
-              <li
-                style={{ "--i": 4, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
-              >
-                <a>Egiteko</a>
-              </li>
-              <li
-                style={{ "--i": 5, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
-              >
-                <a>Infans</a>
-              </li>
-              <li
-                style={{ "--i": 6, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
-              >
-                <a>Cas GSB</a>
-              </li>
-              <li
-                style={{ "--i": 7, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
-              >
-                <a>Infomag</a>
-              </li>
-              <li
-                style={{ "--i": 8, fontSize: ".9375rem", fontWeight: "normal" }}
-                className="block w-full text-right"
-              >
-                <a>Un projet pour un sourire</a>
-              </li>
-              <li style={{ "--i": 9 }} className="block w-full text-right">
-                <a>Projets</a>
-              </li>
-            </ul>
-            <ul className="mt-16">
-              <li
-                style={{
-                  "--i": 10,
-                  fontSize: ".9375rem",
-                  fontWeight: "normal",
-                }}
-                className="block w-full text-right"
-              >
-                <a>Contact</a>
-              </li>
-              <li
-                style={{
-                  "--i": 11,
-                  fontSize: ".9375rem",
-                  fontWeight: "normal",
-                }}
-                className="block w-full text-right"
-              >
-                <a>Github</a>
-              </li>
-              <li
-                style={{
-                  "--i": 12,
-                  fontSize: ".9375rem",
-                  fontWeight: "normal",
-                }}
-                className="block w-full text-right"
-              >
-                <a>Instagram</a>
-              </li>
-              <li
-                style={{
-                  "--i": 13,
-                  fontSize: ".9375rem",
-                  fontWeight: "normal",
-                }}
-                className="block w-full text-right"
-              >
-                <a>Linkedin</a>
-              </li>
-            </ul>
+                <span className="opacity-60 pb-7 block social">Social</span>
+                <li
+                  style={{
+                    "--i": 10,
+                    fontSize: ".9375rem",
+                    fontWeight: "normal",
+                  }}
+                  className="block w-full text-left"
+                >
+                  <a className="animate">Contact</a>
+                </li>
+                <li
+                  style={{
+                    "--i": 11,
+                    fontSize: ".9375rem",
+                    fontWeight: "normal",
+                  }}
+                  className="block w-full text-left"
+                >
+                  <a className="animate">Github</a>
+                </li>
+                <li
+                  style={{
+                    "--i": 12,
+                    fontSize: ".9375rem",
+                    fontWeight: "normal",
+                  }}
+                  className="block w-full text-left"
+                >
+                  <a className="animate">Instagram</a>
+                </li>
+                <li
+                  style={{
+                    "--i": 13,
+                    fontSize: ".9375rem",
+                    fontWeight: "normal",
+                  }}
+                  className="block w-full text-left"
+                >
+                  <a className="animate">Linkedin</a>
+                </li>
+              </ul>
+              <ul>
+                <span className="opacity-60 pb-7 block menu">Menu</span>
+                <li style={{ "--i": 0 }} className="block w-full text-left">
+                  <a className="animate">A proppos</a>
+                </li>
+                <li style={{ "--i": 1 }} className="block w-full text-left">
+                  <a className="animate">Compétences</a>
+                </li>
+                <li style={{ "--i": 2 }} className="block w-full text-left">
+                  <a className="animate">Expérience</a>
+                </li>
+                <li style={{ "--i": 9 }} className="block w-full text-left">
+                  <a className="animate">Projets</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer" style={{ padding: "0 0 50px 0" }}>
+            <div style={{ padding: "0 98px" }}>
+              <span className="opacity-50 block">Rentrons en contact</span>
+              <span className="email-get-in-touch block">
+                <a style={{ textDecoration: "underline" }}>
+                  franckehuipro@gmail.com
+                </a>
+              </span>
+            </div>
           </div>
         </div>
         <span className="drawer-bg"></span>
@@ -150,7 +138,7 @@ const Drawer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    drawer: state.modal,
-  });
+  drawer: state.modal,
+});
 
 export default connect(mapStateToProps, { openModal, toggleDrawer })(Drawer);

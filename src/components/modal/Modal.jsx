@@ -232,12 +232,6 @@ const Modal = ({ hide, content, title, ...props }) => {
 
                     <div className="flex justify-end space-x-4 mt-7">
                       <button
-                        onClick={() => props.hideModal()}
-                        style={{ background: "#e43052" }}
-                      >
-                        Annuler
-                      </button>
-                      <button
                         onClick={handleSubmit(onSubmit)}
                         disabled={
                           loading === true ? true : sent === true ? true : false
