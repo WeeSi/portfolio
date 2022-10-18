@@ -1,8 +1,12 @@
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import BigModal from "../modal/BigModal";
 
 function Projects() {
+  const [open, setOpen] = useState(false);
+  const [id, setId] = useState(0);
+
   return (
     <section id="section-4">
       <div
@@ -17,41 +21,50 @@ function Projects() {
             className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-y-9 gap-6"
             style={{ marginTop: "50px" }}
           >
-            <Link to="/article/4">
-              <article className="px-4">
-                <div className="mb-5">
-                  <img
-                    width="640"
-                    height="283"
-                    className="object-cover"
-                    src={require('../../image/next-music-app.png')}
-                  />
-                </div>
-                <div className="mb-4">
-                  <span
-                    className="block mb-4 text-sm"
-                    style={{ fontWeight: "300", color: "white" }}
-                  >
-                    {" "}
-                    2022{" "}
-                  </span>
+            <article
+              onClick={() => {
+                setId(4);
+                setOpen(true);
+              }}
+              className="px-4"
+            >
+              <div className="mb-5">
+                <img
+                  width="640"
+                  height="283"
+                  className="object-cover"
+                  src={require("../../image/next-music-app.png")}
+                />
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  2022{" "}
+                </span>
 
-                  <h2
-                    style={{ fontWeight: "500", fontSize: "17px", color: "white" }}
-                  >
-                    [Next Music App] <br /> Application web de musique créée en cours de dev.
-                  </h2>
-                </div>
-                <ArrowRightIcon className="h-5 text-white" />
-              </article>
-            </Link>
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [Next Music App] <br /> Application web de musique créée en
+                  cours de dev.
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
             <article className=" px-4">
               <div className="mb-5">
                 <img
                   width="640"
                   height="283"
                   className="object-cover"
-                  src={require('../../image/sports-field.png')}
+                  src={require("../../image/sports-field.png")}
                 />
               </div>
               <div className="mb-4">
@@ -64,7 +77,11 @@ function Projects() {
                 </span>
 
                 <h2
-                  style={{ fontWeight: "500", fontSize: "17px", color: "white" }}
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
                 >
                   [Sports Field] <br /> Site d'information sportif et de live
                   score.
@@ -80,7 +97,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src={require('../../image/carte-formassmat.png')}
+                    src={require("../../image/carte-formassmat.png")}
                   />
                 </div>
                 <div className="mb-4">
@@ -106,71 +123,79 @@ function Projects() {
               </article>
             </a>
 
-            <Link to="/article/2">
-              <article className=" px-4">
-                <div className="mb-5">
-                  <img
-                    width="640"
-                    height="283"
-                    className="object-cover"
-                    src={require('../../image/Logo-gsb.png')}
-                  />
-                </div>
-                <div className="mb-4">
-                  <span
-                    className="block mb-4 text-sm"
-                    style={{ fontWeight: "300", color: "white" }}
-                  >
-                    {" "}
-                    2019 - 2020{" "}
-                  </span>
+            <article
+              onClick={() => {
+                setId(2);
+                setOpen(true);
+              }}
+              className=" px-4"
+            >
+              <div className="mb-5">
+                <img
+                  width="640"
+                  height="283"
+                  className="object-cover"
+                  src={require("../../image/Logo-gsb.png")}
+                />
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  2019 - 2020{" "}
+                </span>
 
-                  <h2
-                    style={{
-                      fontWeight: "500",
-                      fontSize: "17px",
-                      color: "white",
-                    }}
-                  >
-                    [BTS SIO] <br /> Cas GSB (site et mobile)
-                  </h2>
-                </div>
-                <ArrowRightIcon className="h-5 text-white" />
-              </article>
-            </Link>
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [BTS SIO] <br /> Cas GSB (site et mobile)
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
 
-            <Link to="/article/1">
-              <article className="  px-4">
-                <div className="mb-5">
-                  <img
-                    width="640"
-                    height="283"
-                    className="object-cover"
-                    src={require('../../image/formassmat.jpg')}
-                  />
-                </div>
-                <div className="mb-4">
-                  <span
-                    className="block mb-4 text-sm"
-                    style={{ fontWeight: "300", color: "white" }}
-                  >
-                    {" "}
-                    2020{" "}
-                  </span>
+            <article
+              onClick={() => {
+                setId(1);
+                setOpen(true);
+              }}
+              className="  px-4"
+            >
+              <div className="mb-5">
+                <img
+                  width="640"
+                  height="283"
+                  className="object-cover"
+                  src={require("../../image/formassmat.jpg")}
+                />
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  2020{" "}
+                </span>
 
-                  <h2
-                    style={{
-                      fontWeight: "500",
-                      fontSize: "17px",
-                      color: "white",
-                    }}
-                  >
-                    [Infans] <br /> Refonte du site formassmat.
-                  </h2>
-                </div>
-                <ArrowRightIcon className="h-5 text-white" />
-              </article>
-            </Link>
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [Infans] <br /> Refonte du site formassmat.
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
 
             <a href="https://infomag-site.fr/" target="_blank">
               <article className="  px-4">
@@ -179,7 +204,7 @@ function Projects() {
                     width="640"
                     height="283"
                     className="object-cover"
-                    src={require('../../image/infomag-mockup.png')}
+                    src={require("../../image/infomag-mockup.png")}
                   />
                 </div>
                 <div className="mb-4">
@@ -212,7 +237,7 @@ function Projects() {
                   width="640"
                   height="283"
                   className="object-cover"
-                  src={require('../../image/unprojetpourunsourire.png')}
+                  src={require("../../image/unprojetpourunsourire.png")}
                 />
               </div>
               <div className="mb-4">
@@ -225,7 +250,11 @@ function Projects() {
                 </span>
 
                 <h2
-                  style={{ fontWeight: "500", fontSize: "17px", color: "white" }}
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
                 >
                   [BTS SIO] <br /> Un projet pour un sourire.
                 </h2>
@@ -235,6 +264,7 @@ function Projects() {
           </div>
         </div>
       </div>
+      <BigModal id={id} onClose={() => setOpen(false)} isOpen={open} />
     </section>
   );
 }

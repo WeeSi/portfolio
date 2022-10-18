@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import Drawer from "./components/drawer/Drawer";
 import SetCursorPoint from "./hooks/SetCursorPoint";
 import ScrollToTop from "./components/ScrollToTop";
+import Portal from "./components/portal/Portal";
 
 function App(props) {
   const [dark, setDark] = useState(true);
@@ -22,7 +23,6 @@ function App(props) {
       );
     });
   }, []);
-
 
   return (
     <div className={`App ${dark ? "bg-dark" : "bg-white"}`}>
@@ -40,7 +40,9 @@ function App(props) {
         </Routes>
       </BrowserRouter>
       {props.modal.modalOpen && <Modal />}
-      <div ref={cursor} className="cursor hidden sm:block"></div>
+      <Portal>
+        <div ref={cursor} className="cursor hidden sm:block"></div>
+      </Portal>
     </div>
   );
 }

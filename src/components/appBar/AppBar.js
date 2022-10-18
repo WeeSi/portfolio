@@ -37,7 +37,7 @@ function AppBar(props) {
   return (
     <>
       <div
-        className="hidden md:block"
+        className="md:block"
         style={{
           width: "100%",
           position: "fixed",
