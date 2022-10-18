@@ -104,8 +104,20 @@ function Experiences() {
                             <div className="about-me-info text experiences-list">
                                 <h2 className="font-bold text-xl mb-7">Expériences</h2>
                                 <div className="experiences-list-block">
+                                    <p className="experiences-list-block-title">WeCount</p>
+                                    <p className="experiences-list-block-date">2022 - maintenant</p>
+                                    <p className="experiences-list-block-info">
+                                        Junior développeur full stack en alternance
+                                    </p>
+                                    <a className='mt-3 animate space-x-1' target="_blank" href="https://www.wecount.io/">
+                                        <span className='text-xs'>Voir plus</span>
+                                        <ChevronRightIcon className='right-chevron inline h-4' />
+                                    </a>
+                                </div>
+
+                                <div className="experiences-list-block">
                                     <p className="experiences-list-block-title">Egiteko</p>
-                                    <p className="experiences-list-block-date">2020 - present</p>
+                                    <p className="experiences-list-block-date">2020 - 2022</p>
                                     <p className="experiences-list-block-info">
                                         Junior développeur full stack en alternance
                                     </p>
