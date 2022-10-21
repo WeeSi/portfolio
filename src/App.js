@@ -2,7 +2,6 @@ import "./App.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Home from "./Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Article from "./Article";
 import AppBar from "./components/appBar/AppBar";
 import Modal from "./components/modal/Modal";
 import { connect } from "react-redux";
@@ -10,6 +9,8 @@ import Drawer from "./components/drawer/Drawer";
 import SetCursorPoint from "./hooks/SetCursorPoint";
 import ScrollToTop from "./components/ScrollToTop";
 import Portal from "./components/portal/Portal";
+import Contact from "./Contact";
+import Footer from "./components/footer/Footer";
 
 function App(props) {
   const [dark, setDark] = useState(true);
@@ -36,10 +37,11 @@ function App(props) {
             path="/"
             element={<Home setDark={() => console.log("test")} />}
           />
-          <Route path="article/:id" element={<Article />} />
+          <Route path="contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      {props.modal.modalOpen && <Modal />}
+      <Modal />
       <Portal>
         <div ref={cursor} className="cursor hidden sm:block"></div>
       </Portal>

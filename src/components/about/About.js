@@ -1,4 +1,3 @@
-import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import gsap from "gsap";
 import React, { useEffect } from "react";
 
@@ -10,6 +9,7 @@ export default function About(props) {
       y: "0%",
       duration: 1.5,
       stagger: 0.2,
+      opacity: 1,
     });
 
     return () => {};
@@ -30,14 +30,14 @@ export default function About(props) {
         <div className="md:w-3/6 px-3">
           <div>
             <div className="overflow-hidden">
-              <h1 className="desc-me font-bold text-5xl mb-5">
+              <h1 className="opacity-0 desc-me font-bold text-5xl mb-5">
                 Je suis créateur d'application mobile, web et logiciel.
               </h1>
             </div>
             <div className="overflow-hidden">
               <p
                 style={{ color: "var(--text-color)" }}
-                className="wow fadeInUp text-xl desc-me"
+                className="opacity-0 wow fadeInUp text-xl desc-me"
               >
                 Passionné depuis toujours d’informatique j’ai décidé d’en faire
                 mon métier. Je suis actuellement en dernière année d'école
@@ -45,8 +45,8 @@ export default function About(props) {
               </p>
             </div>
             <div className="mt-3">
-                <Social />
-              </div>
+              <Social />
+            </div>
           </div>
         </div>
       </div>

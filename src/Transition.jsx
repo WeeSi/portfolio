@@ -1,27 +1,20 @@
 import "./transition.scss";
-import { Power4 } from "gsap";
-import { useEffect, useRef } from "react";
+import gsap, { Power4 } from "gsap";
+import { useEffect, useRef, useState } from "react";
 
 const Transition = ({ timeline, children }) => {
   const trans = useRef(null);
+  const [reversed, setReversed] = useState(false);
+  const content = gsap.timeline({ defaults: { ease: "power2.out" } });
 
   useEffect(() => {
     timeline.fromTo(
       trans.current,
       {
-        duration: 1,
-        opacity: 1,
+        duration: 1.8,
+        y: "100%",
       },
-      { opacity: 0, duration:1}
-    );
-
-    timeline.fromTo(
-      ".article-content",
-      {
-        opacity: 0,
-        duration: 0.2,
-      },
-      { opacity: 1, duration: 0.2 }
+      { y: "-100%", duration: 1.8 }
     );
 
     return () => {};

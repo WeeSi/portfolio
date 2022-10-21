@@ -20,6 +20,9 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
         "all ease 0.5s";
       document.getElementsByClassName("App")[0].style.transform =
         "scale(0.98, 0.98)";
+        window.scroll = (e) => {
+            console.log(e);
+        }
     }
 
     // return function to be called when unmounted
@@ -37,7 +40,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
   }, [isOpen, id]);
 
   const wheel = (e) => {
-    console.log(container);
+    console.log(e);
     const width = parseFloat(modal.current.style.width.replace("%", ""));
     const height = parseInt(modal.current.style.height.replace("%", ""));
     const borderTopLeftRadius = parseInt(
@@ -182,7 +185,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                         {images.map((el) => {
                           return (
                             <div>
-                              <img src={require(`../../image/${el.src}`)} />{" "}
+                              <img alt={el.title} loading="lazy" src={require(`../../image/${el.src}`)} />{" "}
                             </div>
                           );
                         })}

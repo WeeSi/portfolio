@@ -14,7 +14,9 @@
  * ----------	---	---------------------------------------------------------  *
  */
 
-import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+const exceptions = ["e", "E", "+", "-", "."];
 
 function Input({
   name,
@@ -30,14 +32,46 @@ function Input({
   required,
   pattern,
   error,
+  type,
   ...props
 }) {
+  const [hasValue, setHasValue] = useState(false);
+
+  const onChange = (e) => {
+    if (e.target.value.length > 0) setHasValue(true);
+    else setHasValue(false);
+  };
+
+  const keydown = (evt) => {
+    if (type === "number") {
+      if(evt.key === "Backspace") return;
+
+      return !/^(\s*[0-9+ ]+\s*)+$/.test(evt.key) && evt.preventDefault();
+    }
+  };
 
   return (
-    <div className="w-full">
-      <label style={{ fontWeight: "normal", color: "var(--text-color)" }}>
-        {label} {required && "*"}
-      </label>
+    <div
+      className="
+    input-container w-full"
+    >
+      <AnimatePresence>
+        {!hasValue && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.2,
+            }}
+          >
+            <label style={{ fontWeight: "normal", color: "var(--text-color)" }}>
+              {label} {required && "*"}
+            </label>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <input
         autoComplete={name}
         id={name}
@@ -48,18 +82,23 @@ function Input({
           height: height,
           fontWeight: "normal",
         }}
+        onKeyDown={(event) => keydown(event)}
         className={`input ${className} ${error && "input-error"}`}
-        type="text"
+        type={"text"}
         value={dataname}
         placeholder={placeholder}
         disabled={disabled}
         {...register(name, {
           required: required,
           pattern: pattern,
+          onChange: onChange,
         })}
       />
       {error && (
-        <span style={{ color: "#ff4d6f" }} className="error text-sm">
+        <span
+          style={{ color: "#ff4d6f", bottom: "-30px" }}
+          className="block absolute error text-sm"
+        >
           {error.message}
         </span>
       )}

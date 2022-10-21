@@ -7,6 +7,7 @@ function AppBar(props) {
   const { cursorRef } = props;
   const buttonDrawer = useRef();
   const drawerOpen = props.drawer.drawerOpen;
+  const [showAlternateLogo, setShowAltLogo] = useState(false);
 
   useEffect(() => {
     buttonDrawer.current.addEventListener("mouseover", (e) => {
@@ -20,19 +21,33 @@ function AppBar(props) {
     return () => {};
   }, []);
 
+  useEffect(() => {
+    document.addEventListener("scroll", onScrollEvent);
+  }, []);
+
+  const onScrollEvent = (e) => {
+    if (window.scrollY > 1000) {
+      setShowAltLogo(true);
+    } else setShowAltLogo(false);
+  };
   const toggleDrawer = () => {
     const drawer = document.getElementsByClassName("drawer")[0];
+    const drawerBg = document.getElementsByClassName("drawer-bg")[0];
+    const DrawerFooter = document.querySelector(".drawer .footer");
+    const DrawerMenu = document.querySelector(".drawer .menu");
+    const DrawerSocial = document.querySelector(".drawer .social");
+
     if (drawer.classList.contains("open")) {
       drawer.classList.remove("open");
       document.body.style.overflow = "auto";
       props.toggleDrawer(false);
     } else {
+      drawerBg.style.transition = "transform .4s";
       drawer.classList.add("open");
       document.body.style.overflow = "hidden";
       props.toggleDrawer(true);
     }
   };
-
 
   return (
     <>
@@ -47,9 +62,22 @@ function AppBar(props) {
         }}
       >
         <div className="app-bar">
-          <div className="logo-container">
+          <div
+            className={`logo-container ${!showAlternateLogo ? "show" : "hide"}`}
+          >
             <Link to="/">
-              <h2>FE</h2>
+              <h2>Franck</h2>
+              <h2>Ehui</h2>
+            </Link>
+          </div>
+
+          <div
+            className={`logo-container alt ${
+              showAlternateLogo ? "show" : "hide"
+            }`}
+          >
+            <Link to="/">
+              <h2>Fehui</h2>
             </Link>
           </div>
         </div>
@@ -71,7 +99,10 @@ function AppBar(props) {
           right: "30px",
         }}
       >
-        <div className={`relative overflow-hidden`} style={{ left: "-60px", top: "-8px", height:"24px" }}>
+        <div
+          className={`relative overflow-hidden`}
+          style={{ left: "-60px", top: "-8px", height: "24px" }}
+        >
           <p className={`close-text-drawer ${drawerOpen && "close"}`}>Close</p>
           <p className={`open-text-drawer ${!drawerOpen && "open"}`}>Menu</p>
         </div>
@@ -85,7 +116,7 @@ function AppBar(props) {
 }
 
 const mapStateToProps = (state) => ({
-    drawer: state.modal,
-  });
+  drawer: state.modal,
+});
 
 export default connect(mapStateToProps, { openModal, toggleDrawer })(AppBar);

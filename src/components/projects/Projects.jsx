@@ -8,9 +8,9 @@ function Projects() {
   const [id, setId] = useState(0);
 
   return (
-    <section id="section-4">
+    <section className="conclusion relative z-10" id="section-4">
       <div
-        className="next-screen mb-16"
+        className="next-screen"
         style={{ background: "var(--bg-color-alt)" }}
       >
         <div className="screen-padding md:px-20 px-4">

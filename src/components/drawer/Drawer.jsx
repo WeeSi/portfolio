@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { openModal, toggleDrawer } from "../../store-redux/modalActions";
+import { useLocation } from "react-router-dom";
 
 const Drawer = (props) => {
   const { cursorRef } = props;
   const node = useRef();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     node.current.addEventListener("mouseover", (e) => {
@@ -28,8 +30,25 @@ const Drawer = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const closeDrawer = () => {
+  useEffect(() => {
+    window.onpopstate = (e) => {
+      console.log(e);
+      closeDrawer(false);
+    };
+  }, []);
+
+  const closeDrawer = (animation) => {
     const drawer = document.getElementsByClassName("drawer")[0];
+    const drawerBg = document.getElementsByClassName("drawer-bg")[0];
+    const DrawerFooter = document.querySelector(".drawer .footer");
+    const DrawerMenu = document.querySelector(".drawer .menu");
+    const DrawerSocial = document.querySelector(".drawer .social");
+
+    console.log(DrawerFooter)
+    if (!animation) {
+      drawerBg.style.transition = "unset";
+    }
+
     drawer.classList.remove("open");
     document.body.style.overflow = "auto";
     props.toggleDrawer(false);
@@ -38,7 +57,7 @@ const Drawer = (props) => {
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       if (e.which === 1) {
-        closeDrawer();
+        closeDrawer(true);
       }
     }
   };
@@ -69,7 +88,9 @@ const Drawer = (props) => {
                   }}
                   className="block w-full text-left"
                 >
-                  <a className="animate">Contact</a>
+                  <a href="contact" className="animate">
+                    Contact
+                  </a>
                 </li>
                 <li
                   style={{
@@ -79,7 +100,14 @@ const Drawer = (props) => {
                   }}
                   className="block w-full text-left"
                 >
-                  <a className="animate">Github</a>
+                  <a
+                    target={"_blank"}
+                    href="https://github.com/WeeSi"
+                    rel="noreferrer"
+                    className="animate"
+                  >
+                    Github
+                  </a>
                 </li>
                 <li
                   style={{

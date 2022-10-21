@@ -21,7 +21,6 @@ function Home(props) {
         <Skills />
         <Experiences />
         <Projects />
-        <Footer />
       </Transition>
     </>
   );
