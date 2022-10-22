@@ -40,7 +40,6 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
   }, [isOpen, id]);
 
   const wheel = (e) => {
-    console.log(e);
     const width = parseFloat(modal.current.style.width.replace("%", ""));
     const height = parseInt(modal.current.style.height.replace("%", ""));
     const borderTopLeftRadius = parseInt(

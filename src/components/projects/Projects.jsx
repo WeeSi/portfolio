@@ -1,11 +1,52 @@
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import BigModal from "../modal/BigModal";
 
 function Projects() {
   const [open, setOpen] = useState(false);
   const [id, setId] = useState(0);
+
+  useEffect(() => {
+    const articles = document.querySelectorAll('article');
+    articles.forEach((el) => {
+      el.addEventListener('mouseenter', onMouseEnter);
+      el.addEventListener('mouseleave', onMouseOut);
+    })
+  
+    return () => {
+      articles.forEach((el) => {
+        el.removeEventListener('mouseenter', onMouseEnter, true);
+        el.removeEventListener('mouseleave', onMouseOut, true);
+      })
+    }
+  }, [])
+  
+  const onMouseEnter = (e) => {
+    const alreadyDrag = document.getElementsByClassName("dragText")[0];
+    if (alreadyDrag) return;
+
+    const cursor = document.getElementsByClassName("cursor")[0];
+    const dragText = document.createElement("span");
+    const containerMarquee = document.createElement("div");
+    containerMarquee.classList.add("marquee");
+    dragText.classList.add("dragText");
+    dragText.innerText = "Click";
+
+    containerMarquee.appendChild(dragText);
+
+    cursor.appendChild(containerMarquee);
+    cursor.classList.add("is-clickable");
+  };
+
+  const onMouseOut = (e) => {
+    const cursor = document.getElementsByClassName("cursor")[0];
+    const dragText = document.getElementsByClassName("dragText")[0];
+    const containerMarquee = document.getElementsByClassName("marquee")[0];
+
+    containerMarquee.remove();
+    dragText.remove();
+    cursor.classList.remove("is-clickable");
+  };
 
   return (
     <section className="conclusion relative z-10" id="section-4">
@@ -64,7 +105,7 @@ function Projects() {
                   width="640"
                   height="283"
                   className="object-cover"
-                  src={require("../../image/sports-field.png")}
+                  src={require("../../image/sp.png")}
                 />
               </div>
               <div className="mb-4">
