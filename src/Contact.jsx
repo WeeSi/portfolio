@@ -81,7 +81,7 @@ const Contact = () => {
           <form>
             <div className="form-container space-y-20">
               <Input
-                required={"Veuillez remplir votre adresse nom"}
+                required={"Veuillez remplir votre nom"}
                 register={register}
                 name="name"
                 label="Nom Prénom"
