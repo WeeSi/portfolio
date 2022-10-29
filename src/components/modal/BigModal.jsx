@@ -16,10 +16,10 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
       document.addEventListener("mousedown", handleClick);
       document.addEventListener("wheel", wheel);
-      document.getElementsByClassName("App")[0].style.transition =
-        "all ease 0.5s";
-      document.getElementsByClassName("App")[0].style.transform =
-        "scale(0.98, 0.98)";
+    //   document.getElementsByClassName("App")[0].style.transition =
+    //     "all ease 0.5s";
+    //   document.getElementsByClassName("App")[0].style.transform =
+    //     "scale(0.98, 0.98)";
         window.scroll = (e) => {
             console.log(e);
         }
@@ -31,8 +31,8 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
         document.removeEventListener("mousedown", handleClick);
         document.removeEventListener("wheel", wheel);
         document.getElementsByTagName("body")[0].style.overflow = "auto";
-        document.getElementsByClassName("App")[0].style.transition =
-          "all ease 0.5s";
+        // document.getElementsByClassName("App")[0].style.transition =
+        //   "all ease 0.5s";
         document.getElementsByClassName("App")[0].style.transform = "unset";
       }
     };
@@ -92,7 +92,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
   if (!id && !isOpen) return null;
 
   const data = DataArticles.find((el) => el.id === parseInt(id));
-  const { images, year, type, role, desc, title } = data;
+  const { images, year, type, role, desc, title, url } = data;
 
   return (
     <Portal>
@@ -103,6 +103,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
           width: "100%",
           top: "0",
           pointerEvents: isOpen ? "all" : "none",
+          zIndex:999999
         }}
       >
         <div className="h-full w-full flex justify-center">
@@ -158,6 +159,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                     zIndex: 99,
                   }}
                   className="fixed bottom-5 rounded-full fixed right-14 top-16 flex justify-center items-center"
+                  onClick={() => window.open(url, '_blank').focus()}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -178,8 +180,8 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                   ref={container}
                   className="hide-scroll px-8 py-8 h-full overflow-y-auto"
                 >
-                  <div className="flex space-x-4">
-                    <div style={{ width: "60vw" }}>
+                  <div className="flex space-x-4 flex-col md:flex-row">
+                    <div className="images-project" style={{ width: "60vw" }}>
                       <div className="space-y-4">
                         {images.map((el) => {
                           return (
@@ -199,6 +201,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                         padding: "90px 130px",
                         pointerEvents: "none",
                       }}
+                      className="desc-project"
                     >
                       <h1
                         style={{ borderBottom: "0.1rem solid #303030" }}

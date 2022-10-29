@@ -35,7 +35,7 @@ function App(props) {
         <Routes>
           <Route
             path="/"
-            element={<Home setDark={() => console.log("test")} />}
+            element={<Home />}
           />
           <Route path="contact" element={<Contact />} />
         </Routes>

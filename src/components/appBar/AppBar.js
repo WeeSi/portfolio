@@ -93,7 +93,7 @@ function AppBar(props) {
           color: "unset",
           height: "16px",
           padding: "0",
-          zIndex: "999999999999999999",
+          zIndex: "999999",
           top: "33px",
           position: "fixed",
           right: "30px",

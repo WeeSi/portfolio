@@ -70,7 +70,7 @@ const Contact = () => {
         <div style={{ maxWidth: "950px" }}>
           <div className="overflow-hidden">
             <h1
-              style={{ fontSize: "58px", marginBottom: "150px" }}
+              style={{ fontSize: "48px", marginBottom: "150px" }}
               className="font-bold"
             >
               <div className="text-animate">Hey! Je suis ouvert</div>

@@ -72,26 +72,14 @@ const Drawer = (props) => {
               padding: "0px 98px",
               alignItems: "center",
             }}
-            className="w-full h-full"
+            className="w-full h-full menu-container"
           >
             <div className="flex w-full">
               <ul
-                className="block space-y-6"
+                className="block social-container space-y-6"
                 style={{ WebkitBoxFlex: "0.8", flex: "0.8" }}
               >
                 <span className="opacity-60 pb-7 block social">Social</span>
-                <li
-                  style={{
-                    "--i": 10,
-                    fontSize: ".9375rem",
-                    fontWeight: "normal",
-                  }}
-                  className="block w-full text-left"
-                >
-                  <a href="contact" className="animate">
-                    Contact
-                  </a>
-                </li>
                 <li
                   style={{
                     "--i": 11,
@@ -143,6 +131,16 @@ const Drawer = (props) => {
                 </li>
                 <li style={{ "--i": 9 }} className="block w-full text-left">
                   <a className="animate">Projets</a>
+                </li>
+                <li
+                  style={{
+                    "--i": 10,
+                  }}
+                  className="block w-full text-left"
+                >
+                  <a href="contact" className="animate">
+                    Contact
+                  </a>
                 </li>
               </ul>
             </div>

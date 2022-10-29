@@ -48,8 +48,8 @@ function Skills() {
   };
 
   const settings = {
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     autoplay: false,
     autoplaySpeed: 0,
     arrows: false,
@@ -57,7 +57,6 @@ function Skills() {
     speed: 1800,
     infinite: true,
     swipeToSlide: true,
-    centerMode: true,
     draggable: true,
   };
 
@@ -67,7 +66,7 @@ function Skills() {
         <div className="screen-padding md:px-20 px-4">
           <h1 className="title font-bold text-3xl text-white">Compétence.</h1>
         </div>
-        <div ref={container} className="relative skills-slider-content py-8">
+        <div ref={container} className="relative skills-slider-content">
           <Slider
             ref={(slider) => (customSlider.current = slider)}
             {...settings}
