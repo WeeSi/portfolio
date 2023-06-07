@@ -22,6 +22,7 @@ function Projects() {
   }, [])
 
   const onMouseEnter = (e) => {
+    if (e.target.dataset.actif !== "true") return;
     const alreadyDrag = document.getElementsByClassName("dragText")[0];
     if (alreadyDrag) return;
 
@@ -43,8 +44,8 @@ function Projects() {
     const dragText = document.getElementsByClassName("dragText")[0];
     const containerMarquee = document.getElementsByClassName("marquee")[0];
 
-    containerMarquee.remove();
-    dragText.remove();
+    if (containerMarquee) containerMarquee.remove();
+    if (dragText) dragText.remove();
     cursor.classList.remove("is-clickable");
   };
 
@@ -63,6 +64,7 @@ function Projects() {
             style={{ marginTop: "50px" }}
           >
             <article
+              data-actif={true}
               onClick={() => {
                 setId(4);
                 setOpen(true);
@@ -99,7 +101,7 @@ function Projects() {
               </div>
               <ArrowRightIcon className="h-5 text-white" />
             </article>
-            <article className=" px-4">
+            <article data-actif={false} className=" px-4">
               <div className="mb-5">
                 <img
                   width="640"
@@ -132,7 +134,7 @@ function Projects() {
             </article>
 
             <a href="https://infans.fr" target="_blank">
-              <article className=" px-4">
+              <article data-actif={true} className=" px-4">
                 <div className="mb-5">
                   <img
                     width="640"
@@ -165,6 +167,7 @@ function Projects() {
             </a>
 
             <article
+              data-actif={true}
               onClick={() => {
                 setId(2);
                 setOpen(true);
@@ -202,6 +205,7 @@ function Projects() {
             </article>
 
             <article
+              data-actif={true}
               onClick={() => {
                 setId(1);
                 setOpen(true);
@@ -238,7 +242,9 @@ function Projects() {
               <ArrowRightIcon className="h-5 text-white" />
             </article>
 
-            <article className="  px-4">
+            <article
+              data-actif={false}
+              className="  px-4">
               <div className="mb-5">
                 <img
                   width="640"
@@ -270,7 +276,9 @@ function Projects() {
               <ArrowRightIcon className="h-5 text-white" />
             </article>
 
-            <article className="  px-4">
+            <article
+              data-actif={false}
+              className="  px-4">
               <div className="mb-5">
                 <img
                   width="640"

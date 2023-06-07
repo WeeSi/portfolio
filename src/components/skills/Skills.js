@@ -64,7 +64,7 @@ function Skills() {
     <section id="section-2">
       <div className="bg-alt skills next-screen md:mt-0 mt-10">
         <div className="screen-padding md:px-20 px-4">
-          <h1 className="title font-bold text-3xl text-white">Compétence.</h1>
+          <h1 className="title font-bold text-3xl text-white">Compétences.</h1>
         </div>
         <div ref={container} className="relative skills-slider-content">
           <Slider

@@ -198,7 +198,9 @@ function Experiences() {
                   </a>
                 </div>
                 <div className="experiences-list-block">
-                  <p className="experiences-list-block-title">Infomag</p>
+                  <p className="experiences-list-block-title">
+                    Infomag (Inactif)
+                  </p>
                   <p className="experiences-list-block-date">2018 - 2019</p>
                   <p className="experiences-list-block-info">
                     Création du site Infomag
@@ -206,7 +208,7 @@ function Experiences() {
                 </div>
                 <div className="experiences-list-block">
                   <p className="experiences-list-block-title">
-                    Un projet pour un sourire
+                    Un projet pour un sourire (Inactif)
                   </p>
                   <p className="experiences-list-block-date">2018</p>
                   <p className="experiences-list-block-info">

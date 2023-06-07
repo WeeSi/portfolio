@@ -822,12 +822,11 @@ label {
 
 .custom-scroll-bar::-webkit-scrollbar {
   width: 16px;
-  display: none;
 }
 
 /* Track */
 .custom-scroll-bar::-webkit-scrollbar-track {
-  background: #101010;
+  background: transparent;
 }
  
 /* Handle */

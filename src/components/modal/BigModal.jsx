@@ -16,13 +16,13 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
       document.addEventListener("mousedown", handleClick);
       document.addEventListener("wheel", wheel);
-    //   document.getElementsByClassName("App")[0].style.transition =
-    //     "all ease 0.5s";
-    //   document.getElementsByClassName("App")[0].style.transform =
-    //     "scale(0.98, 0.98)";
-        window.scroll = (e) => {
-            console.log(e);
-        }
+      //   document.getElementsByClassName("App")[0].style.transition =
+      //     "all ease 0.5s";
+      //   document.getElementsByClassName("App")[0].style.transform =
+      //     "scale(0.98, 0.98)";
+      window.scroll = (e) => {
+        console.log(e);
+      }
     }
 
     // return function to be called when unmounted
@@ -62,9 +62,8 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
       modal.current.style.width = `${width + 0.5}%`;
       modal.current.style.height = `${height + 1}%`;
       modal.current.style.borderTopLeftRadius = `${borderTopLeftRadius - 3}px`;
-      modal.current.style.borderTopRightRadius = `${
-        borderTopRightRadius - 3
-      }px`;
+      modal.current.style.borderTopRightRadius = `${borderTopRightRadius - 3
+        }px`;
     }
 
     if (
@@ -77,9 +76,8 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
       modal.current.style.width = `${width - 0.5}%`;
       modal.current.style.height = `${height - 1}%`;
       modal.current.style.borderTopLeftRadius = `${borderTopLeftRadius + 3}px`;
-      modal.current.style.borderTopRightRadius = `${
-        borderTopRightRadius + 3
-      }px`;
+      modal.current.style.borderTopRightRadius = `${borderTopRightRadius + 3
+        }px`;
     }
   };
 
@@ -103,7 +101,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
           width: "100%",
           top: "0",
           pointerEvents: isOpen ? "all" : "none",
-          zIndex:999999
+          zIndex: 999999
         }}
       >
         <div className="h-full w-full flex justify-center">
@@ -199,7 +197,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                         alignSelf: "flex-start",
                         width: "40vw",
                         padding: "90px 130px",
-                        pointerEvents: "none",
+
                       }}
                       className="desc-project"
                     >
@@ -209,13 +207,16 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                       >
                         {title}
                       </h1>
-                      <div className="pt-4 pb-8">
-                        <span className="text-sm">{desc}</span>
+                      <div style={{ maxHeight: "35vh", overflowY: "scroll" }} className="custom-scroll-bar mt-4 mb-4">
+                        <div>
+                          <span className="text-sm">{desc}</span>
+                        </div>
                       </div>
+
                       <div className="flex space-x-4">
-                        <span style={{color:"var(--text-color)", fontSize:"13px"}} className="block uppercase">Année: {year}</span>
-                        <span style={{color:"var(--text-color)", fontSize:"13px"}} className=" block uppercase">Type: {type}</span>
-                        <span style={{color:"var(--text-color)", fontSize:"13px"}} className=" block uppercase">Role: {role}</span>
+                        <span style={{ color: "var(--text-color)", fontSize: "13px" }} className="block uppercase">Année: {year}</span>
+                        <span style={{ color: "var(--text-color)", fontSize: "13px" }} className=" block uppercase">Type: {type}</span>
+                        <span style={{ color: "var(--text-color)", fontSize: "13px" }} className=" block uppercase">Role: {role}</span>
                       </div>
                     </div>
                   </div>

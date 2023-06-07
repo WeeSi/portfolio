@@ -155,9 +155,9 @@ const Drawer = (props) => {
           </div>
           <div className="footer" style={{ padding: "0 0 50px 0" }}>
             <div style={{ padding: "0 98px" }}>
-              <span className="opacity-50 block">Rentrons en contact</span>
+              <span className="opacity-50 block">Entrons en contact</span>
               <span className="email-get-in-touch block">
-                <a style={{ textDecoration: "underline" }}>
+                <a href="mailto:franckehuipro@gmail.com" style={{ textDecoration: "underline" }}>
                   franckehuipro@gmail.com
                 </a>
               </span>
