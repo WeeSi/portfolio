@@ -78,8 +78,8 @@ const Contact = () => {
               style={{ fontSize: "48px", marginBottom: "150px" }}
               className="font-bold"
             >
-              <div className="text-animate">Hey! Je suis ouvert</div>
-              <div className="text-animate">à toutes demandes 😊</div>
+              <div className="text-animate">Hey! Que puis-je faire</div>
+              <div className="text-animate">pour vous ? 😊</div>
             </h1>
           </div>
 
