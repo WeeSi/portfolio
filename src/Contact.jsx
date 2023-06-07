@@ -43,7 +43,7 @@ const Contact = () => {
 
     try {
       await axios.post(
-        `${process.env.REACT_APP_TOKEN}/api/mail/${process.env.REACT_APP_CLIENT}`,
+        `${process.env.REACT_APP_SERVER_API}/api/mail/${process.env.REACT_APP_CLIENT}`,
         {
           ...inputsData,
         },
