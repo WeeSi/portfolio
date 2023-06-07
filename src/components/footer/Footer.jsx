@@ -131,7 +131,7 @@ const Footer = (props) => {
                       </li>
                     </ul>
                   </div>
-                  <div>
+                  <div className="text-right">
                     <span >Made with ❤️ by <a href="/ad69" target="_blank">AD69.</a></span>
                   </div>
                 </div>
