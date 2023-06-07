@@ -60,7 +60,6 @@ const Footer = (props) => {
                   style={{ flex: "1", WebkitBoxFlex: "1", MozBoxFlex: "1" }}
                   className=""
                 >
-                  <a className="navbar-brand" href="https://sebostudio.com"></a>
                   <div className="contact-items">
                     <div className="contact-item">
                       <a
@@ -73,6 +72,9 @@ const Footer = (props) => {
                         2021 © Franck Ehui. All rights reserved.
                       </div>
                     </div>
+                  </div>
+                  <div className="text-left">
+                    <span >Made with ❤️ by <a href="/ad69" target="_blank">AD69.</a></span>
                   </div>
                 </div>
                 <div
@@ -131,9 +133,7 @@ const Footer = (props) => {
                       </li>
                     </ul>
                   </div>
-                  <div className="text-right">
-                    <span >Made with ❤️ by <a href="/ad69" target="_blank">AD69.</a></span>
-                  </div>
+
                 </div>
               </div>
             </div>
