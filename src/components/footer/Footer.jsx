@@ -26,7 +26,7 @@ const Footer = (props) => {
   }, [pathname]);
 
   return (
-    <section style={{background:"#000000"}}>
+    <section style={{ background: "#000000" }}>
       <div className="footer-container section-row lets-talk lets-talk-2019">
         <div className="content-container flex">
           <div className="interest md:px-20 px-4 z-10 relative grid md:grid-cols-2 grid-cols-1 gap-y-10 justify-between items-center">
@@ -118,6 +118,9 @@ const Footer = (props) => {
                         </a>
                       </li>
                     </ul>
+                  </div>
+                  <div>
+                    <span >Made with ❤️ by <a href="/ad69" target="_blank">AD69.</a></span>
                   </div>
                 </div>
               </div>

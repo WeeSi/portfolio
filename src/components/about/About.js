@@ -19,7 +19,7 @@ export default function About(props) {
   return (
     <section id="section-1" className="relative">
       <div className="about md:flex md:h-screen md:px-20 px-4 screen-padding">
-      <div class="bg-overlay-black"></div>
+        <div class="bg-overlay-black"></div>
         <div className="md:w-3/6 px-3 image-me-container">
           <div className="image-me relative">
             <img
@@ -41,9 +41,9 @@ export default function About(props) {
                 style={{ color: "var(--text-color)" }}
                 className="opacity-0 wow fadeInUp text-xl desc-me"
               >
-                Passionné depuis toujours d’informatique j’ai décidé d’en faire
-                mon métier. Je suis actuellement en dernière année d'école
-                d'ingénieur informatique en alternance chez WeCount.
+                Ingénieur informatique chez WeCount, compétent en programmation,
+                conception logicielle et résolution de problèmes techniques.
+                Prêt à relever des défis et contribuer à des projets ambitieux.
               </p>
             </div>
             <div className="mt-3">

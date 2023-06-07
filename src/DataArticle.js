@@ -12,7 +12,7 @@ export const DataArticles = [
     year: 2022,
     type: "School",
     role: "Front-End",
-    desc: "Ce mini projet à été réalisé avec NextJs, un framework ReactJS, Tailwindcss et MaterialUi. Le but était de développer une application de musique, nous nous sommes inspirés d’une maquette Dribbble (Dribbble étant un site où toutes sortent de maquette y sont répertorié).",
+    desc: "Ce mini projet à été réalisé avec NextJs, un framework ReactJS, Tailwindcss et MaterialUi. Le but était de développer une application de musique, nous nous sommes inspirés d’une maquette Dribbble (Dribbble étant un site où toutes sortes de maquettes y sont répertoriées).",
     title: "NextMusic",
     url: "https://next-music.netlify.app",
   },
@@ -49,6 +49,6 @@ export const DataArticles = [
     role: "FullStack - HTML/JS/CSS/PHP",
     desc: "Une refonte complète du site web mon compte, en se concentrant sur les dernières tendances de conception et une expérience utilisateur exceptionnelle pour les utilisateurs de formassmat et e-linguo.",
     title: "Refonte FormAssmat",
-    url: "",
+    url: "https://infans.fr/",
   },
 ];

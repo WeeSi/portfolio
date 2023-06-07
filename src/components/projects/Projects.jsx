@@ -12,7 +12,7 @@ function Projects() {
       el.addEventListener('mouseenter', onMouseEnter);
       el.addEventListener('mouseleave', onMouseOut);
     })
-  
+
     return () => {
       articles.forEach((el) => {
         el.removeEventListener('mouseenter', onMouseEnter, true);
@@ -20,7 +20,7 @@ function Projects() {
       })
     }
   }, [])
-  
+
   const onMouseEnter = (e) => {
     const alreadyDrag = document.getElementsByClassName("dragText")[0];
     if (alreadyDrag) return;
@@ -131,7 +131,7 @@ function Projects() {
               <ArrowRightIcon className="h-5 text-white" />
             </article>
 
-            <a href="https://carte.formassmat-moncompte.fr/" target="_blank">
+            <a href="https://infans.fr" target="_blank">
               <article className=" px-4">
                 <div className="mb-5">
                   <img
@@ -238,39 +238,37 @@ function Projects() {
               <ArrowRightIcon className="h-5 text-white" />
             </article>
 
-            <a href="https://infomag-site.fr/" target="_blank">
-              <article className="  px-4">
-                <div className="mb-5">
-                  <img
-                    width="640"
-                    height="283"
-                    className="object-cover"
-                    src={require("../../image/infomag-mockup.png")}
-                  />
-                </div>
-                <div className="mb-4">
-                  <span
-                    className="block mb-4 text-sm"
-                    style={{ fontWeight: "300", color: "white" }}
-                  >
-                    {" "}
-                    2019{" "}
-                  </span>
+            <article className="  px-4">
+              <div className="mb-5">
+                <img
+                  width="640"
+                  height="283"
+                  className="object-cover"
+                  src={require("../../image/infomag-mockup.png")}
+                />
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  2019{" "}
+                </span>
 
-                  <h2
-                    style={{
-                      fontWeight: "500",
-                      fontSize: "17px",
-                      color: "white",
-                    }}
-                  >
-                    [Infomag] <br />
-                    Site d'actualité
-                  </h2>
-                </div>
-                <ArrowRightIcon className="h-5 text-white" />
-              </article>
-            </a>
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [Infomag] <br />
+                  Site d'actualité
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
 
             <article className="  px-4">
               <div className="mb-5">

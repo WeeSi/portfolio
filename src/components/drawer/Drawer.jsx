@@ -17,7 +17,7 @@ const Drawer = (props) => {
       cursorRef.current.classList.remove("is-clickable");
     });
 
-    return () => {};
+    return () => { };
   }, []);
 
   useEffect(() => {
@@ -32,7 +32,6 @@ const Drawer = (props) => {
 
   useEffect(() => {
     window.onpopstate = (e) => {
-      console.log(e);
       closeDrawer(false);
     };
   }, []);
@@ -44,7 +43,6 @@ const Drawer = (props) => {
     const DrawerMenu = document.querySelector(".drawer .menu");
     const DrawerSocial = document.querySelector(".drawer .social");
 
-    console.log(DrawerFooter)
     if (!animation) {
       drawerBg.style.transition = "unset";
     }
@@ -61,6 +59,16 @@ const Drawer = (props) => {
       }
     }
   };
+
+  const lickOnClick = (e) => {
+    const section = document.querySelector(`#${e.target.dataset.section}`);
+    if (pathname == '/') {
+      closeDrawer(true);
+      section.scrollIntoView();
+    } else {
+      window.location = `/#${e.target.dataset.section}`
+    }
+  }
 
   return (
     <div className="drawer">
@@ -105,7 +113,7 @@ const Drawer = (props) => {
                   }}
                   className="block w-full text-left"
                 >
-                  <a className="animate">Instagram</a>
+                  <a href="https://www.instagram.com/franckwiiseegoht" className="animate">Instagram</a>
                 </li>
                 <li
                   style={{
@@ -115,22 +123,22 @@ const Drawer = (props) => {
                   }}
                   className="block w-full text-left"
                 >
-                  <a className="animate">Linkedin</a>
+                  <a href="fr.linkedin.com/in/franck-ehui-386505170" className="animate">Linkedin</a>
                 </li>
               </ul>
               <ul>
                 <span className="opacity-60 pb-7 block menu">Menu</span>
                 <li style={{ "--i": 0 }} className="block w-full text-left">
-                  <a className="animate">A proppos</a>
+                  <a data-section="section-1" onClick={lickOnClick} className="animate">À propos</a>
                 </li>
                 <li style={{ "--i": 1 }} className="block w-full text-left">
-                  <a className="animate">Compétences</a>
+                  <a data-section="section-2" onClick={lickOnClick} className="animate">Compétences</a>
                 </li>
                 <li style={{ "--i": 2 }} className="block w-full text-left">
-                  <a className="animate">Expérience</a>
+                  <a data-section="section-3" onClick={lickOnClick} className="animate">Expériences</a>
                 </li>
                 <li style={{ "--i": 9 }} className="block w-full text-left">
-                  <a className="animate">Projets</a>
+                  <a data-section="section-4" onClick={lickOnClick} className="animate">Projets</a>
                 </li>
                 <li
                   style={{

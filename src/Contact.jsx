@@ -35,26 +35,31 @@ const Contact = () => {
       skewX: "0deg",
     });
 
-    return () => {};
+    return () => { };
   }, []);
 
   const onSubmit = async (inputsData) => {
     setLoading(true);
-    const { data } = await axios.post(
-      "https://www.test.sports-field.com/send.php",
-      {
-        ...inputsData,
-      }
-    );
 
-    if (data === "1") {
+    try {
+      await axios.post(
+        "http://localhost:3000/api/mail/franck",
+        {
+          ...inputsData,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
+          }
+        },
+      );
+
       setStatus(1);
       setMessage("Merci, votre message à bien été envoyé");
-    } else {
-      setMessage(data);
+    } catch (error) {
+      setMessage(error.response.data);
       setStatus(-1);
     }
-
     setLoading(false);
   };
 
@@ -186,6 +191,7 @@ const Contact = () => {
                         transition={{
                           duration: 0.5,
                         }}
+                        style={{ display: "flex", alignItems: "center" }}
                         className="flex justify-between w-full"
                       >
                         <span style={{ color: status === 1 ? "#4dff94" : "#ff4d6f" }}>
