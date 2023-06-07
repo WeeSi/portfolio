@@ -25,6 +25,16 @@ const Footer = (props) => {
     });
   }, [pathname]);
 
+  const lickOnClick = (e) => {
+    const section = document.querySelector(`#${e.target.dataset.section}`);
+    if (pathname == '/') {
+      closeDrawer(true);
+      section.scrollIntoView();
+    } else {
+      window.location = `/#${e.target.dataset.section}`
+    }
+  }
+
   return (
     <section style={{ background: "#000000" }}>
       <div className="footer-container section-row lets-talk lets-talk-2019">
@@ -78,13 +88,13 @@ const Footer = (props) => {
                   <div className="foot-about">
                     <ul className="menu">
                       <li>
-                        <a className="menu-item animate">A Propos</a>
+                        <a data-section="section-1" onClick={lickOnClick} className="menu-item animate">À Propos</a>
                       </li>
                       <li>
-                        <a className="menu-item animate">Compétences</a>
+                        <a data-section="section-2" onClick={lickOnClick} className="menu-item animate">Compétences</a>
                       </li>
                       <li>
-                        <a className="menu-item animate">Projets</a>
+                        <a data-section="section-4" onClick={lickOnClick} className="menu-item animate">Projets</a>
                       </li>
                     </ul>
                   </div>
@@ -92,6 +102,7 @@ const Footer = (props) => {
                     <ul className="menu">
                       <li>
                         <a
+                          href="https://github.com/WeeSi"
                           rel="noreferrer"
                           target="_blank"
                           className="menu-item animate"
@@ -101,6 +112,7 @@ const Footer = (props) => {
                       </li>
                       <li>
                         <a
+                          href="https://www.instagram.com/franckwiiseegoht"
                           rel="noreferrer"
                           target="_blank"
                           className="menu-item animate"
@@ -110,6 +122,7 @@ const Footer = (props) => {
                       </li>
                       <li>
                         <a
+                          href="fr.linkedin.com/in/franck-ehui-386505170"
                           rel="noreferrer"
                           target="_blank"
                           className="menu-item animate"
