@@ -28,7 +28,6 @@ const Footer = (props) => {
   const lickOnClick = (e) => {
     const section = document.querySelector(`#${e.target.dataset.section}`);
     if (pathname == '/') {
-      closeDrawer(true);
       section.scrollIntoView();
     } else {
       window.location = `/#${e.target.dataset.section}`
