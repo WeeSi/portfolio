@@ -69,7 +69,7 @@ const Footer = (props) => {
                         franckehuipro@gmail.com
                       </a>
                       <div className="copyright mt-5">
-                        2021 © Franck Ehui. All rights reserved.
+                        2023 © Franck Ehui. All rights reserved.
                       </div>
                     </div>
                   </div>
