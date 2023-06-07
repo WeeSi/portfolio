@@ -123,7 +123,7 @@ const Drawer = (props) => {
                   }}
                   className="block w-full text-left"
                 >
-                  <a href="fr.linkedin.com/in/franck-ehui-386505170" className="animate">Linkedin</a>
+                  <a href="https://fr.linkedin.com/in/franck-ehui-386505170" className="animate">Linkedin</a>
                 </li>
               </ul>
               <ul>

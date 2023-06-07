@@ -121,7 +121,7 @@ const Footer = (props) => {
                       </li>
                       <li>
                         <a
-                          href="fr.linkedin.com/in/franck-ehui-386505170"
+                          href="https://fr.linkedin.com/in/franck-ehui-386505170"
                           rel="noreferrer"
                           target="_blank"
                           className="menu-item animate"
