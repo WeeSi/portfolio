@@ -1,5 +1,27 @@
 export const DataArticles = [
   {
+    id: 5,
+    images: [
+      { src: "cityzen/video1.mp4", type: "video" },
+      { src: "cityzen/video2.mp4", type: "video" },
+      { src: "cityzen/image1.png" },
+      { src: "cityzen/image2.png" },
+      { src: "cityzen/image3.png" },
+      { src: "cityzen/image4.png" },
+      { src: "cityzen/image5.png" },
+      { src: "cityzen/image7.png" },
+      { src: "cityzen/image8.png" },
+      { src: "cityzen/image6.png" },
+      { src: "cityzen/image9.png" },
+    ],
+    year: 2023,
+    type: "Auto-Entrepreneur",
+    role: "Full-Stack - Vue.js/Node.js",
+    desc: "Le site web que j'ai créé combine les technologies Vue.js et Node.js, ainsi que la bibliothèque GSAP, afin de fournir une expérience interactive et captivante aux utilisateurs. Inspiré par des sites primés sur Awwwards, il offre aux utilisateurs la possibilité de se connecter et de modifier le contenu du site. L'application utilise Vue.js pour développer une interface utilisateur réactive et conviviale. Grâce à Node.js, elle communique avec un serveur backend pour gérer les fonctionnalités d'authentification et de gestion des contenus modifiables. La bibliothèque GSAP (GreenSock Animation Platform) est utilisée pour créer des animations fluides et attrayantes, permettant de donner vie aux éléments visuels du site. Cela contribue à offrir une expérience utilisateur immersive et dynamique. Les utilisateurs peuvent se connecter à leurs comptes personnels, ce qui leur donne accès à des fonctionnalités spéciales, telles que la modification du contenu du site. Ils peuvent ainsi mettre à jour des textes, des images ou d'autres éléments visuels de manière intuitive et conviviale, sans nécessiter de connaissances techniques avancées. En s'inspirant des sites présents sur Awwwards, le design du site met l'accent sur l'esthétique, l'ergonomie et l'expérience utilisateur. Il vise à susciter l'engagement et à captiver les visiteurs grâce à un design moderne, des transitions fluides et des animations soignées. En résumé, ce site web conçu avec Vue.js, Node.js et GSAP offre aux utilisateurs la possibilité de se connecter, de modifier le contenu du site et de bénéficier d'une expérience interactive et visuellement attrayante. Il allie fonctionnalité et design, inspiré par les meilleures pratiques de l'industrie.",
+    title: "CityZen",
+    url: "https://cityzen-coiffure.fr",
+  },
+  {
     id: 4,
     images: [
       { src: "next-music-loginscreen.png" },
@@ -12,7 +34,7 @@ export const DataArticles = [
     year: 2022,
     type: "School",
     role: "Front-End",
-    desc: "Ce mini projet à été réalisé avec NextJs, un framework ReactJS, Tailwindcss et MaterialUi. Le but était de développer une application de musique, nous nous sommes inspirés d’une maquette Dribbble (Dribbble étant un site où toutes sortes de maquettes y sont répertoriées).",
+    desc: "Ce mini projet à été réalisé avec NextJs, un framework ReactJS, Tailwindcss et MaterialUi. Le but était de développer une application de musique, nous nous sommes inspirés d’une maquette Dribbble (Dribbble étant un site où toutes sortes de maquettes y sont répertoriées). ID: WeeSii PASSWORD : 1234",
     title: "NextMusic",
     url: "https://next-music.netlify.app",
   },

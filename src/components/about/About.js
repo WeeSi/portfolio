@@ -6,10 +6,8 @@ export default function About(props) {
   const tl = gsap.timeline({ defaults: { ease: "SlowMo.easeOut" } });
 
   useEffect(() => {
-    tl.to(".desc-me", {
+    tl.to(".desc-me, .about-img", {
       y: "0%",
-      duration: 1.5,
-      stagger: 0.2,
       opacity: 1,
     });
 
@@ -21,7 +19,7 @@ export default function About(props) {
       <div className="about md:flex md:h-screen md:px-20 px-4 screen-padding">
         <div class="bg-overlay-black"></div>
         <div className="md:w-3/6 px-3 image-me-container">
-          <div className="image-me relative">
+          <div className="image-me relative overflow-hidden">
             <img
               src={require("../../image/received_1291899467620740-removebg-preview.png")}
               alt=""
@@ -32,13 +30,23 @@ export default function About(props) {
         <div className="md:w-3/6 px-3 relative z-10 desc-me-container">
           <div>
             <div className="overflow-hidden">
-              <h1 className="opacity-0 desc-me font-bold text-5xl mb-5 ">
+              <h1
+                style={{
+                  transition:
+                    "opacity .9s cubic-bezier(0.38, 0.005, 0.215, 1),transform .9s cubic-bezier(0.38, 0.005, 0.215, 1)",
+                }}
+                className="opacity-0 desc-me font-bold text-5xl mb-5 "
+              >
                 Je suis créateur d'application mobile, web et logiciel.
               </h1>
             </div>
             <div className="overflow-hidden">
               <p
-                style={{ color: "var(--text-color)" }}
+                style={{
+                  color: "var(--text-color)",
+                  transition:
+                    "opacity .9s cubic-bezier(0.38, 0.005, 0.215, 1),transform .9s cubic-bezier(0.38, 0.005, 0.215, 1)",
+                }}
                 className="opacity-0 wow fadeInUp text-xl desc-me"
               >
                 Ingénieur informatique chez WeCount, compétent en programmation,
@@ -58,8 +66,25 @@ export default function About(props) {
 }
 
 const Social = () => {
+  const tl = gsap.timeline({ defaults: { ease: "SlowMo.easeOut" } });
+
+  useEffect(() => {
+    tl.to(".social-icons", {
+      y: "0%",
+      opacity: 1,
+    });
+
+    return () => {};
+  }, []);
+
   return (
-    <div className="flex space-x-2 items-center social">
+    <div
+      style={{
+        transition:
+          "opacity .9s cubic-bezier(0.38, 0.005, 0.215, 1),transform .9s cubic-bezier(0.38, 0.005, 0.215, 1)",
+      }}
+      className="flex space-x-2 items-center social social-icons"
+    >
       <a target="_blank" href="https://github.com/WeeSi">
         <div
           style={{ background: "#ededed", width: "45px", height: "45px" }}

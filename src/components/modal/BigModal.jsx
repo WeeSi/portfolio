@@ -126,7 +126,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                   zIndex: "9999999999999",
                 }}
               >
-                <div className="fixed right-28 top-16">
+                <div className="fixed right-28 top-16" style={{ zIndex: 99 }}>
                   <div
                     className="flex justify-center items-center close-big-modal overflow-hidden"
                     style={{
@@ -184,7 +184,20 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
                         {images.map((el) => {
                           return (
                             <div>
-                              <img alt={el.title} loading="lazy" src={require(`../../image/${el.src}`)} />{" "}
+                              {(el.type !== "video" || !el.type) && (
+                                <img alt={el.title} loading="lazy" src={require(`../../image/${el.src}`)} />
+                              )}
+                              {
+                                el.type === "video" && (
+                                  <video
+                                    autoPlay={true}
+                                    muted="muted"
+                                    loop
+                                  >
+                                    <source src={require(`../../videos/${el.src}`)} type="video/mp4"></source>
+                                  </video>
+                                )
+                              }
                             </div>
                           );
                         })}

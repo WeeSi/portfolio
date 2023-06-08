@@ -11,12 +11,20 @@ function Projects() {
     articles.forEach((el) => {
       el.addEventListener('mouseenter', onMouseEnter);
       el.addEventListener('mouseleave', onMouseOut);
+      if (el.dataset.video) {
+        el.addEventListener('mouseenter', mouseOverVideo)
+        el.addEventListener('mouseleave', mouseOutVideo)
+      }
     })
 
     return () => {
       articles.forEach((el) => {
         el.removeEventListener('mouseenter', onMouseEnter, true);
         el.removeEventListener('mouseleave', onMouseOut, true);
+        if (el.dataset.video) {
+          el.removeEventListener('mouseenter', mouseOverVideo, true)
+          el.removeEventListener('mouseleave', mouseOutVideo, true)
+        }
       })
     }
   }, [])
@@ -49,6 +57,23 @@ function Projects() {
     cursor.classList.remove("is-clickable");
   };
 
+  const mouseOverVideo = (e) => {
+    const target = e.target;
+    const video = target.querySelector('video');
+
+    if (video) {
+      video.play();
+    }
+  }
+
+  const mouseOutVideo = (e) => {
+    const target = e.target;
+    const video = target.querySelector('video');
+    if (video) {
+      video.pause();
+    }
+  }
+
   return (
     <section className="conclusion relative z-10" id="section-4">
       <div
@@ -63,6 +88,47 @@ function Projects() {
             className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-y-9 gap-6"
             style={{ marginTop: "50px" }}
           >
+            <article
+              data-actif={true}
+              data-video={true}
+              onClick={() => {
+                setId(5);
+                setOpen(true);
+              }}
+              className="px-4"
+            >
+              <div className="mb-5">
+                <video
+                  width="640"
+                  height="283"
+                  autoPlay={false}
+                  muted="muted"
+                  loop
+                >
+                  <source src={require("../../videos/Enregistrement 2023-06-08 085959.mp4")} type="video/mp4"></source>
+                </video>
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  2023{" "}
+                </span>
+
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [CityZen] <br /> Application web.
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
             <article
               data-actif={true}
               onClick={() => {

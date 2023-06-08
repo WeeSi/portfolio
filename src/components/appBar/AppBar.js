@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -49,10 +50,22 @@ function AppBar(props) {
     }
   };
 
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "SlowMo.easeOut" } });
+
+    tl.to(".drawer-button", {
+      y: "0%",
+      opacity: 1,
+      transitionDelay: 0.8,
+    });
+
+    return () => {};
+  }, []);
+
   return (
     <>
       <div
-        className="md:block"
+        className="md:block app-bar-container"
         style={{
           width: "100%",
           position: "fixed",
