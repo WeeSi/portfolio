@@ -56,7 +56,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
       width < 100 &&
       height >= 94 &&
       height < 100 &&
-      direction === 100
+      direction > 0
     ) {
       modal.current.style.transition = `all ease 0.2s`;
       modal.current.style.width = `${width + 0.5}%`;
@@ -69,7 +69,7 @@ const BigModal = ({ isOpen, onClose, onOpen, id }) => {
     if (
       width > 97 &&
       height > 94 &&
-      direction === -100 &&
+      direction < 0 &&
       containerScrollTop < 300
     ) {
       modal.current.style.transition = `all ease 0.2s`;
