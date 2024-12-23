@@ -88,6 +88,43 @@ function Projects() {
             className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-y-9 gap-6"
             style={{ marginTop: "50px" }}
           >
+            <article data-actif={true}
+              className=" px-4"
+              onClick={() => {
+                setId(6);
+                setOpen(true);
+              }}
+            >
+              <div className="mb-5">
+                <img
+                  width="640"
+                  height="283"
+                  className="object-cover"
+                  src={require("../../image/sp.png")}
+                />
+              </div>
+              <div className="mb-4">
+                <span
+                  className="block mb-4 text-sm"
+                  style={{ fontWeight: "300", color: "white" }}
+                >
+                  {" "}
+                  En cours - 2020{" "}
+                </span>
+
+                <h2
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "17px",
+                    color: "white",
+                  }}
+                >
+                  [Sports Field] <br /> Site d'information sportif et de live
+                  score.
+                </h2>
+              </div>
+              <ArrowRightIcon className="h-5 text-white" />
+            </article>
             <article
               data-actif={true}
               data-video={true}
@@ -167,37 +204,7 @@ function Projects() {
               </div>
               <ArrowRightIcon className="h-5 text-white" />
             </article>
-            <article data-actif={false} className=" px-4">
-              <div className="mb-5">
-                <img
-                  width="640"
-                  height="283"
-                  className="object-cover"
-                  src={require("../../image/sp.png")}
-                />
-              </div>
-              <div className="mb-4">
-                <span
-                  className="block mb-4 text-sm"
-                  style={{ fontWeight: "300", color: "white" }}
-                >
-                  {" "}
-                  En cours - 2021{" "}
-                </span>
 
-                <h2
-                  style={{
-                    fontWeight: "500",
-                    fontSize: "17px",
-                    color: "white",
-                  }}
-                >
-                  [Sports Field] <br /> Site d'information sportif et de live
-                  score.
-                </h2>
-              </div>
-              <ArrowRightIcon className="h-5 text-white" />
-            </article>
 
             <a href="https://infans.fr" target="_blank">
               <article data-actif={true} className=" px-4">

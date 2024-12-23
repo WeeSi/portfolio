@@ -136,8 +136,23 @@ function Experiences() {
                 <div className="experiences-list-block">
                   <p className="experiences-list-block-title">WeCount</p>
                   <p className="experiences-list-block-date">
-                    2022 - maintenant
+                    2023 - Aujourd'hui
                   </p>
+                  <p className="experiences-list-block-info">
+                    Développeur full stack
+                  </p>
+                  <a
+                    className="mt-3 animate space-x-1"
+                    target="_blank"
+                    href="https://www.wecount.io/"
+                  >
+                    <span className="text-xs">Voir plus</span>
+                    <ChevronRightIcon className="right-chevron inline h-4" />
+                  </a>
+                </div>
+                <div className="experiences-list-block">
+                  <p className="experiences-list-block-title">WeCount</p>
+                  <p className="experiences-list-block-date">2022 - 2023</p>
                   <p className="experiences-list-block-info">
                     Junior développeur full stack en alternance
                   </p>
