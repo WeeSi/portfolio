@@ -17,10 +17,10 @@ const MoonIcon = () => (
   </svg>
 )
 const AutoIcon = () => (
-  <svg viewBox="0 0 24 24" width={13} height={13} stroke="currentColor" fill="none" strokeWidth={1.8}>
-    <circle cx="12" cy="12" r="4" />
-    <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-  </svg>
+ <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="11" cy="11" r="9.5" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M 11 1.5 A 9.5 9.5 0 0 1 11 20.5 Z" fill="currentColor"/>
+</svg>
 )
 const SunIcon = () => (
   <svg viewBox="0 0 24 24" width={13} height={13} stroke="currentColor" fill="none" strokeWidth={1.8}>

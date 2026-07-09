@@ -55,7 +55,9 @@ function RootLayout() {
           <LocomotiveProvider>
             <CurtainController />
             <Nav curtainRef={curtainRef} />
-            <Outlet />
+            <div id="site-main" className="site-main">
+              <Outlet />
+            </div>
           </LocomotiveProvider>
         </CurtainContext.Provider>
         <Scripts />

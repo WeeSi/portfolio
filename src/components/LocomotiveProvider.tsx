@@ -63,7 +63,7 @@ export default function LocomotiveProvider({ children }: LocomotiveProviderProps
     if (lenis) {
       ScrollTrigger.scrollerProxy(document.documentElement, {
         scrollTop(value) {
-          if (arguments.length) {
+          if (value !== undefined) {
             locomotive.scrollTo(value, { immediate: true })
           }
           return lenis.scroll
@@ -77,6 +77,8 @@ export default function LocomotiveProvider({ children }: LocomotiveProviderProps
           }
         },
       })
+
+      ScrollTrigger.defaults({ scroller: document.documentElement })
     }
 
     const frame = requestAnimationFrame(() => {
@@ -94,6 +96,7 @@ export default function LocomotiveProvider({ children }: LocomotiveProviderProps
       cancelAnimationFrame(frame)
       ScrollTrigger.removeEventListener('refresh', onRefresh)
       ScrollTrigger.scrollerProxy(document.documentElement, {})
+      ScrollTrigger.defaults({ scroller: undefined })
       locomotive.destroy()
       instanceRef.current = null
       setInstance(null)

@@ -96,11 +96,11 @@ export default function HorizontalGallery() {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionEl,
-        scroller: document.documentElement,
         start: "top top",
         end: () => `+=${layout.totalScroll}`,
         pin: pinEl,
         pinSpacing: false,
+        pinType: "transform",
         invalidateOnRefresh: true,
         onUpdate(self) {
           const x = -self.progress * layout.totalScroll;
@@ -208,7 +208,11 @@ export default function HorizontalGallery() {
       <div className="gallery-pin" ref={pinRef}>
         <header className="gallery-header">
           <div className="gallery-header-copy">
-            <p className="gallery-label">Photographie</p>
+            <p className="gallery-label">
+              <span className="about-num">— 05</span>
+              {" "}
+              <span>Photographie</span>
+              </p>
             <h2 className="gallery-title">
               Le monde à travers
               <br />

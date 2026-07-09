@@ -140,7 +140,7 @@ export default function Music() {
           swiperRef.current = swiper;
         }}
         loop
-        loopAdditionalSlides={4}
+        loopAddBlankSlides
       >
         {MUSIC.map((music) => (
           <SwiperSlide key={music.id}>

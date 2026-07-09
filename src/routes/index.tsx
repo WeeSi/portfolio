@@ -96,67 +96,67 @@ function HomePage() {
     const isFirstVisit = !homeEntrancePlayed;
     homeEntrancePlayed = true;
 
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    if (isFirstVisit) {
-      tl.from("#main-nav", { y: -20, opacity: 0, duration: 0.7 }, 0);
-    } else {
-      gsap.set("#main-nav", { opacity: 1, y: 0 });
-    }
-    tl.from(
-      "#heroName",
-      { y: 60, opacity: 0, duration: 1.1, ease: "power4.out" },
-      0.1,
-    )
-      .from("#heroSocials", { x: -20, opacity: 0, duration: 0.8 }, 0.55)
-      .from(".hero-tag", { y: 20, opacity: 0, duration: 0.7 }, 0.6)
-      .from(
-        "#heroRoles .hero-role",
-        { y: 30, opacity: 0, duration: 0.7, stagger: 0.12 },
-        0.5,
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      if (isFirstVisit) {
+        tl.from("#main-nav", { y: -20, opacity: 0, duration: 0.7 }, 0);
+      } else {
+        gsap.set("#main-nav", { opacity: 1, y: 0 });
+      }
+      tl.from(
+        "#heroName",
+        { y: 60, opacity: 0, duration: 1.1, ease: "power4.out" },
+        0.1,
       )
-      .from(".hero-avail", { y: 15, opacity: 0, duration: 0.6 }, 0.9);
+        .from("#heroSocials", { x: -20, opacity: 0, duration: 0.8 }, 0.55)
+        .from(".hero-tag", { y: 20, opacity: 0, duration: 0.7 }, 0.6)
+        .from(
+          "#heroRoles .hero-role",
+          { y: 30, opacity: 0, duration: 0.7, stagger: 0.12 },
+          0.5,
+        )
+        .from(".hero-avail", { y: 15, opacity: 0, duration: 0.6 }, 0.9);
 
-    function reveal(sel: string, vars: Record<string, number> = {}) {
-      gsap.utils.toArray<Element>(sel).forEach((el, i) => {
-        gsap.fromTo(
-          el,
-          {
-            opacity: 0,
-            y: vars.y ?? 40,
-            x: vars.x ?? 0,
-            scale: vars.scale ?? 1,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            x: 0,
-            scale: 1,
-            duration: vars.duration ?? 0.9,
-            ease: "power3.out",
-            delay: i * (vars.stagger ?? 0.08),
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: el as Element,
-              scroller: document.documentElement,
-              start: "top 88%",
-              toggleActions: "play none none none",
-              once: true,
+      function reveal(sel: string, vars: Record<string, number> = {}) {
+        gsap.utils.toArray<Element>(sel).forEach((el, i) => {
+          gsap.fromTo(
+            el,
+            {
+              opacity: 0,
+              y: vars.y ?? 40,
+              x: vars.x ?? 0,
+              scale: vars.scale ?? 1,
             },
-          },
-        );
-      });
-    }
+            {
+              opacity: 1,
+              y: 0,
+              x: 0,
+              scale: 1,
+              duration: vars.duration ?? 0.9,
+              ease: "power3.out",
+              delay: i * (vars.stagger ?? 0.08),
+              immediateRender: false,
+              scrollTrigger: {
+                trigger: el as Element,
+                start: "top 88%",
+                toggleActions: "play none none none",
+                once: true,
+              },
+            },
+          );
+        });
+      }
 
-    reveal(".gsap-reveal");
-    reveal(".gsap-reveal-left", { x: -40, y: 0 });
-    reveal(".gsap-reveal-scale", { scale: 0.88, y: 20, stagger: 0.07 });
+      reveal(".gsap-reveal");
+      reveal(".gsap-reveal-left", { x: -40, y: 0 });
+      reveal(".gsap-reveal-scale", { scale: 0.88, y: 20, stagger: 0.07 });
+    });
 
     instance?.resize();
     ScrollTrigger.refresh();
 
     return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ctx.revert();
     };
   }, [restored, locomotiveReady, instance]);
 
@@ -310,7 +310,10 @@ function HomePage() {
 
       <section id="experience">
         <div className="work-header gsap-reveal">
-          <h2 className="work-title">Expériences</h2>
+          <div>
+            <div className="about-num">— 02</div>
+            <h2 className="work-title">Expériences</h2>
+          </div>
           <span className="work-count">0{EXPERIENCES.length} expériences</span>
         </div>
         <div className="exp-list">
@@ -344,8 +347,12 @@ function HomePage() {
       {/* ─── SKILLS ─── */}
       <section id="skills">
         <div className="skills-top gsap-reveal">
-          <h2>Mon stack</h2>
-          <p>
+        <div>
+            <div className="about-num">— 03</div>
+            <h2>Mon stack</h2>
+        </div>
+      
+          <p style={{paddingTop:"30px"}}>
             Les outils que j&apos;utilise quotidiennement pour construire des
             produits de qualité.
           </p>
@@ -373,7 +380,11 @@ function HomePage() {
       {/* ─── WORK ─── */}
       <section id="work">
         <div className="work-header gsap-reveal">
-          <h2 className="work-title">Projets sélectionnés</h2>
+          <div>
+            <div className="about-num">— 04</div>
+            <h2 className="work-title">Projets sélectionnés</h2>
+        </div>
+         
           <span className="work-count">
             {PROJECTS.length < 10 ? `0${PROJECTS.length}` : PROJECTS.length}{" "}
             projets
@@ -411,12 +422,17 @@ function HomePage() {
         id="music"
         className="gsap-reveal music-section data-scroll-section"
       >
-        <div className="skills-top gsap-reveal">
-          <h2 className="music-title">
-            Les sons qui nourrissent
-            <br />
-            <em>ma créativité</em>
-          </h2>
+        <div className="music-container gsap-reveal">
+          <div>
+            <p className="gallery-label" style={{textAlign:"left"}} >
+              <span className="about-num">— 05</span> <span>Musique</span></p>
+              <h3 className="music-title">
+                Les sons qui nourrissent
+                <br />
+                <em>ma créativité</em>
+              </h3>
+          </div>
+         
         </div>
         <Music />
       </section>
