@@ -12,7 +12,7 @@ const MUSIC = [
     artist: "The 1975",
     link: "https://www.youtube.com/watch?v=tGv7CUutzqU",
     cover:
-      "https://images.merchill.com/wp-content/uploads/2022/11/About-You-Lyrics-The-1975-Retro-Newspaper-Poster-Gifts-for-The-1975-Fans.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDi9WbbFUjX5EnT8V1Ry9oek0Tz-zV1_zkEdbsO3MsZXmbFRj7loznAog&s=10",
     background: "#8d6a52",
   },
   {
