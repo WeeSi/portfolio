@@ -12,6 +12,7 @@
   --dark-accent: #c8965a;
   --dark-accent2: #0b0803;
   --drawer-bg: var(--dark-accent2);
+  --dark-bg3: #3d3020;
 
   --light-bg: #f9e2c9;
   --light-bg2: #fed8ad;
@@ -20,6 +21,7 @@
   --light-gray2: #c8b898;
   --light-accent: #9b5e1f;
   --light-accent2: #282018;
+  --light-bg3: #ffffff59;
 
   --copper: #b9793f;
   --copper-bright: #e6a45c;
@@ -33,6 +35,8 @@
   --gray2: var(--dark-gray2);
   --accent: var(--dark-accent);
   --accent2: var(--dark-accent2);
+
+  --tag-bg: var(--dark-bg3);
 }
 
 html.light,
@@ -45,6 +49,7 @@ html[data-theme="light"] {
   --accent: var(--light-accent);
   --accent2: var(--light-accent2);
   --drawer-bg: var(--dark-accent2);
+  --tag-bg: var(--light-bg3);
 }
 
 *,
@@ -2116,7 +2121,7 @@ html[data-theme="light"] .cs-page {
   text-transform: uppercase;
   color: var(--gray);
   border: 1px solid var(--gray2);
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--tag-bg);
   border-radius: 100px;
   padding: 0.25rem 0.625rem;
   white-space: nowrap;
