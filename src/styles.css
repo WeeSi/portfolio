@@ -2154,11 +2154,9 @@ html[data-theme="light"] .cs-page {
   width: 315px;
 }
 
-.mySwiper {
-  
-  }
 
-.music-card {
+
+.mySwiper .swiper-slide .music-card-container .music-card {
     height: 390px;
     border-radius: 18px;
     background: var(--accent2);
