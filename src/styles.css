@@ -2170,6 +2170,7 @@ html[data-theme="light"] .cs-page {
       transform: scale(1.05);
       .music-cover {
         animation: spin 8s linear infinite;
+        animation-play-state: running;
       }
     }
   }
@@ -2196,6 +2197,9 @@ html[data-theme="light"] .cs-page {
     border-radius: 99999px;
     flex: 0 auto;
     overflow: hidden;
+
+    animation: spin 8s linear infinite;
+  animation-play-state: paused;
   }
 
   .music-info strong {
