@@ -2172,15 +2172,16 @@ html[data-theme="light"] .cs-page {
         animation: spin 8s linear infinite;
       }
     }
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
   .music-cover {
     width: 230px;
