@@ -251,7 +251,7 @@ function ProjectPage() {
             <p className="cs-hero__desc">{project.subtitle}</p>
             <div className="cs-tags">
               {project.tags.map((tag) => (
-                <span key={tag} className="cs-tag">
+                <span key={tag} className="exp-tag">
                   {tag}
                 </span>
               ))}

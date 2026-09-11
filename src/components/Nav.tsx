@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useLocomotive } from "../hooks/LocomotiveContext";
+import { PROFILE } from "#/data/profile";
 
 interface NavProps {
   curtainRef: React.RefObject<HTMLDivElement | null>;
@@ -11,14 +12,15 @@ interface NavProps {
 const NAV_LINKS = [
   { label: "À propos", id: "about", num: "01" },
   { label: "Expériences", id: "experience", num: "02" },
-  { label: "Stack", id: "skills", num: "03" },
-  { label: "Projets", id: "work", num: "04" },
-  { label: "Passions", id: "music", num: "05" },
-  { label: "Contact", id: "contact", num: "06" },
+  { label: "Formation", id: "education", num: "03" },
+  { label: "Stack", id: "skills", num: "04" },
+  { label: "Projets", id: "work", num: "05" },
+  { label: "Passions", id: "music", num: "06" },
+  { label: "Contact", id: "contact", num: "07" },
 ] as const;
 
-const NAV_LINKS_LEFT = NAV_LINKS.slice(0, 3);
-const NAV_LINKS_RIGHT = NAV_LINKS.slice(3);
+const NAV_LINKS_LEFT = NAV_LINKS.slice(0, 4);
+const NAV_LINKS_RIGHT = NAV_LINKS.slice(4);
 
 const NAV_OPEN_CLASS = "is-nav-open";
 
@@ -27,9 +29,10 @@ const GITHUB_URL = "https://github.com/WeeSi";
 const EMAIL = "franckehuipro@gmail.com";
 
 const DRAWER_LINKS = [
-  { label: "GitHub", href: GITHUB_URL, external: true },
-  { label: "LinkedIn", href: LINKEDIN_URL, external: true },
-  { label: EMAIL, href: `mailto:${EMAIL}`, external: false },
+  { label: "CV ↓", href: PROFILE.cvPath, external: false, download: true },
+  { label: "GitHub", href: GITHUB_URL, external: true, download: false },
+  { label: "LinkedIn", href: LINKEDIN_URL, external: true, download: false },
+  { label: EMAIL, href: `mailto:${EMAIL}`, external: false, download: false },
 ] as const;
 
 const SHOW_AVAILABLE = import.meta.env.VITE_APP_SHOW_AVAILABLE_FOR_WORK;
@@ -203,7 +206,7 @@ export default function Nav({ curtainRef: _curtainRef }: NavProps) {
                   key={id}
                   className="nav-menu__item"
                   style={
-                    { "--nav-item-index": index + 3 } as React.CSSProperties
+                    { "--nav-item-index": index + 4 } as React.CSSProperties
                   }
                 >
                   <a
@@ -225,10 +228,11 @@ export default function Nav({ curtainRef: _curtainRef }: NavProps) {
           <footer className="nav-menu__bottom">
             <div className="nav-menu__socials">
               <ul className="nav-menu__socials-list">
-                {DRAWER_LINKS.map(({ label, href, external }) => (
+                {DRAWER_LINKS.map(({ label, href, external, download }) => (
                   <li key={label}>
                     <a
                       href={href}
+                      {...(download ? { download: true } : {})}
                       {...(external
                         ? { target: "_blank", rel: "noreferrer" }
                         : {})}
@@ -246,7 +250,7 @@ export default function Nav({ curtainRef: _curtainRef }: NavProps) {
             <div className="nav-menu__brand">
               <div className="nav-menu__signature">Franck Ehui.</div>
               <div className="nav-menu__brand-sub">
-                FULLSTACK DEVELOPER — LYON, FR
+                {PROFILE.tagline.toUpperCase()} — LYON, FR
               </div>
             </div>
           </footer>

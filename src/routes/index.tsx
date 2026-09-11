@@ -9,7 +9,11 @@ import { useLocomotive } from "../hooks/LocomotiveContext";
 import HorizontalGallery from "#/components/HorizontalGallery";
 import Music from "#/components/Music";
 import { markLeavingHome, peekHomeReturn } from "../lib/homeRestore";
+import EducationItem from "#/components/EducationItem";
+import ExperienceItem from "#/components/ExperienceItem";
+import { EDUCATION_COUNT, SCHOOL, SEMINARS } from "#/data/education";
 import { EXPERIENCES } from "#/data/experiences";
+import { PROFILE } from "#/data/profile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,22 +40,26 @@ function clearRevealInlineStyles() {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Franck Ehui — Fullstack Developer & UI Designer · Lyon" },
+      {
+        title: `Franck Ehui — ${PROFILE.tagline} · Lyon`,
+      },
       {
         name: "description",
-        content:
-          "Portfolio de Franck Ehui, développeur Fullstack basé à Lyon. React, Next.js, Node.js, TypeScript. Disponible pour missions freelance.",
+        content: `Portfolio de Franck Ehui, ${PROFILE.tagline.toLowerCase()} basé à Lyon. ${PROFILE.stack}, recherche vectorielle et pipelines Elasticsearch.`,
       },
-      { property: "og:title", content: "Franck Ehui — Fullstack Developer" },
+      {
+        property: "og:title",
+        content: `Franck Ehui — ${PROFILE.tagline}`,
+      },
       {
         property: "og:description",
-        content: "Portfolio de Franck Ehui, développeur Fullstack basé à Lyon.",
+        content: `Portfolio de Franck Ehui — ${PROFILE.tagline}. ${PROFILE.stack}.`,
       },
       { property: "og:url", content: "https://franckehui.dev" },
       { property: "og:type", content: "website" },
       {
         property: "twitter:title",
-        content: "Franck Ehui — Fullstack Developer",
+        content: `Franck Ehui — ${PROFILE.tagline}`,
       },
     ],
   }),
@@ -110,11 +118,9 @@ function HomePage() {
       )
         .from("#heroSocials", { x: -20, opacity: 0, duration: 0.8 }, 0.55)
         .from(".hero-tag", { y: 20, opacity: 0, duration: 0.7 }, 0.6)
-        .from(
-          "#heroRoles .hero-role",
-          { y: 30, opacity: 0, duration: 0.7, stagger: 0.12 },
-          0.5,
-        )
+        .from("#heroTagline", { y: 30, opacity: 0, duration: 0.7 }, 0.5)
+        .from(".hero-stack", { y: 20, opacity: 0, duration: 0.6 }, 0.65)
+        .from(".download-cv-btn", { y: 15, opacity: 0, duration: 0.6 }, 0.8)
         .from(".hero-avail", { y: 15, opacity: 0, duration: 0.6 }, 0.9);
 
       function reveal(sel: string, vars: Record<string, number> = {}) {
@@ -200,7 +206,18 @@ function HomePage() {
             </div>
           </div>
           <div className="hero-roles" id="heroRoles">
-            <div className="hero-role">Fullstack Developer</div>
+            <div className="hero-tagline" id="heroTagline">
+              {PROFILE.tagline}
+            </div>
+            <div className="hero-actions">
+              <a
+                href={PROFILE.cvPath}
+                download
+                className="download-cv-btn cs-btn"
+              >
+                CV ↓
+              </a>
+            </div>
             {import.meta.env.VITE_APP_SHOW_AVAILABLE_FOR_WORK && (
               <div className="hero-avail">
                 <div className="avail-dot" />
@@ -272,9 +289,12 @@ function HomePage() {
             <br />
             moyen d&apos;<em>expression.</em>
           </h2>
+          <p className="about-intro">
+            Impact mesurable sur la recherche et les pipelines de données.
+          </p>
           <div className="stats-row">
             <div className="stat gsap-reveal-scale">
-              <div className="n">3+</div>
+              <div className="n">7+</div>
               <div className="l">Ans d'expérience</div>
             </div>
             <div className="stat gsap-reveal-scale">
@@ -318,28 +338,43 @@ function HomePage() {
         </div>
         <div className="exp-list">
           {EXPERIENCES.map((experience, index) => (
-            <div className="exp-item gsap-fade">
-              <div className="exp-fill"></div>
-              <div className="exp-inner">
-                <div className="exp-num">0{index + 1}</div>
-                <div>
-                  <div className="exp-company">{experience.company}</div>
-                  <div className="exp-role">{experience.role}</div>
-                  <div className="pr-tags">
-                    {experience.tags.map((tag) => (
-                      <span className="pr-tag">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="exp-right">
-                  <span className="exp-period">{experience.period}</span>
-                  {experience.working && (
-                    <span className="exp-badge-live">● En poste</span>
-                  )}
-                  <span className="exp-arrow">→</span>
-                </div>
-              </div>
-            </div>
+            <ExperienceItem
+              key={`${experience.company}-${index}`}
+              experience={experience}
+              index={index}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section id="education">
+        <div className="work-header gsap-reveal">
+          <div>
+            <div className="about-num">— 03</div>
+            <h2 className="work-title">Formation</h2>
+          </div>
+          <span className="work-count">0{EDUCATION_COUNT} formations</span>
+        </div>
+
+        <h3 className="edu-subtitle gsap-fade">Séminaires</h3>
+        <div className="edu-list">
+          {SEMINARS.map((entry, index) => (
+            <EducationItem
+              key={`seminar-${index}`}
+              entry={entry}
+              index={index}
+            />
+          ))}
+        </div>
+
+        <h3 className="edu-subtitle gsap-fade">Parcours scolaire</h3>
+        <div className="edu-list">
+          {SCHOOL.map((entry, index) => (
+            <EducationItem
+              key={`school-${index}`}
+              entry={entry}
+              index={SEMINARS.length + index}
+            />
           ))}
         </div>
       </section>
@@ -347,12 +382,12 @@ function HomePage() {
       {/* ─── SKILLS ─── */}
       <section id="skills">
         <div className="skills-top gsap-reveal">
-        <div>
-            <div className="about-num">— 03</div>
+          <div>
+            <div className="about-num">— 04</div>
             <h2>Mon stack</h2>
-        </div>
-      
-          <p style={{paddingTop:"30px"}}>
+          </div>
+
+          <p style={{ paddingTop: "30px" }}>
             Les outils que j&apos;utilise quotidiennement pour construire des
             produits de qualité.
           </p>
@@ -381,10 +416,10 @@ function HomePage() {
       <section id="work">
         <div className="work-header gsap-reveal">
           <div>
-            <div className="about-num">— 04</div>
+            <div className="about-num">— 05</div>
             <h2 className="work-title">Projets sélectionnés</h2>
-        </div>
-         
+          </div>
+
           <span className="work-count">
             {PROJECTS.length < 10 ? `0${PROJECTS.length}` : PROJECTS.length}{" "}
             projets
@@ -406,7 +441,7 @@ function HomePage() {
               <div className="pr-name">{p.title}</div>
               <div className="pr-tags">
                 {p.tags.slice(0, 3).map((t) => (
-                  <span key={t} className="pr-tag">
+                  <span key={t} className="exp-tag">
                     {t}
                   </span>
                 ))}
@@ -424,15 +459,15 @@ function HomePage() {
       >
         <div className="music-container gsap-reveal">
           <div>
-            <p className="gallery-label" style={{textAlign:"left"}} >
-              <span className="about-num">— 05</span> <span>Musique</span></p>
-              <h3 className="music-title">
-                Les sons qui nourrissent
-                <br />
-                <em>ma créativité</em>
-              </h3>
+            <p className="gallery-label" style={{ textAlign: "left" }}>
+              <span className="about-num">— 06</span> <span>Musique</span>
+            </p>
+            <h3 className="music-title">
+              Les sons qui nourrissent
+              <br />
+              <em>ma créativité</em>
+            </h3>
           </div>
-         
         </div>
         <Music />
       </section>
@@ -477,6 +512,9 @@ function HomePage() {
           >
             GitHub →
           </a>
+          <a href={PROFILE.cvPath} download className="btn-main btn-ghost">
+            CV ↓
+          </a>
         </div>
       </section>
 
@@ -489,6 +527,9 @@ function HomePage() {
           </a>
           <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">
             LinkedIn
+          </a>
+          <a href={PROFILE.cvPath} download>
+            CV
           </a>
           <a href="#hero">↑ Top</a>
         </div>
