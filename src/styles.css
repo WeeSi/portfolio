@@ -2180,6 +2180,7 @@ html[data-theme="light"] .cs-page {
         transform: rotate(360deg);
       }
     }
+  }
 
   .music-cover {
     width: 230px;
@@ -2216,8 +2217,8 @@ html[data-theme="light"] .cs-page {
   .music-card-container {
     width: 320px;
   }
-}
-.music-controls {
+
+  .music-controls {
   display: flex;
   gap: 10px;
 }
