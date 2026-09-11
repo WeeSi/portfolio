@@ -2155,7 +2155,10 @@ html[data-theme="light"] .cs-page {
 }
 
 .mySwiper {
-  .music-card {
+  
+  }
+
+.music-card {
     height: 390px;
     border-radius: 18px;
     background: var(--accent2);
@@ -2179,7 +2182,6 @@ html[data-theme="light"] .cs-page {
         transform: rotate(360deg);
       }
     }
-  }
 
   .music-cover {
     width: 230px;
